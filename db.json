@@ -1,0 +1,32 @@
+{
+  "users": [
+    {
+      "name": "Hương",
+      "email": "asdas",
+      "phoneNumber": "121221",
+      "block": false,
+      "id": 6
+    },
+    {
+      "name": "1212",
+      "email": "adas",
+      "phoneNumber": "41324",
+      "block": false,
+      "id": 7
+    },
+    {
+      "name": "adsas",
+      "email": "asddas",
+      "phoneNumber": "ada",
+      "block": false,
+      "id": 8
+    },
+    {
+      "name": "adas",
+      "email": "asdas",
+      "phoneNumber": "12121",
+      "block": false,
+      "id": 9
+    }
+  ]
+}
