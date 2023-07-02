@@ -1,5 +1,5 @@
 {
-  "users": [
+  "userList": [
     {
       "name": "Hương",
       "email": "asdas",
@@ -11,7 +11,7 @@
       "name": "1212",
       "email": "adas",
       "phoneNumber": "41324",
-      "block": false,
+      "block": true,
       "id": 7
     },
     {
@@ -27,6 +27,76 @@
       "phoneNumber": "12121",
       "block": false,
       "id": 9
+    },
+    {
+      "name": "ada",
+      "email": "asdad",
+      "phoneNumber": "11",
+      "block": false,
+      "id": 10
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "userName": "admin",
+      "password": "123",
+      "isAdmin": true,
+      "firstName": "Thu",
+      "lastName": "Hương",
+      "email": "thuhuong@gmail.com",
+      "avatar": "https://firebasestorage.googleapis.com/v0/b/learnfirebase-afb02.appspot.com/o/userAvatars%2Fadmin.jpg?alt=media&token=3482a408-7ed1-41c6-b18f-eb730dc02623"
+    },
+        {
+      "id": 1,
+      "userName": "ntbphuoc",
+      "password": "123456",
+      "isAdmin": true,
+      "firstName": "Phước",
+      "lastName": "Nguyễn",
+      "email": "thuhuong@gmail.com",
+      "avatar": "https://firebasestorage.googleapis.com/v0/b/learnfirebase-afb02.appspot.com/o/userAvatars%2Fadmin.jpg?alt=media&token=3482a408-7ed1-41c6-b18f-eb730dc02623"
+    }
+  ],
+  "carts": [
+    {
+      "id": 1,
+      "userId": 1,
+      "products": [
+        {
+          "productId": 1,
+          "quantity": 5,
+          "des": "giao lẹ lẹ"
+        }
+      ]
+    }
+  ],
+  "receipts": [
+    {
+      "id": 1,
+      "userId": 1,
+      "totalPrice": 3000,
+      "paid": true,
+      "products": [
+        {
+          "productId": 1,
+          "quantity": 5,
+          "des": "giao lẹ lẹ"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "totalPrice": 3000,
+      "paid": true,
+      "products": [
+        {
+          "productId": 1,
+          "quantity": 5,
+          "des": "giao lẹ lẹ"
+        }
+      ]
     }
   ]
 }
