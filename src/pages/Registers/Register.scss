@@ -1,0 +1,27 @@
+@import "@varScss";
+
+.register_container {
+    width: 100%;
+    height: calc(100vh - $heightNavbar);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+
+    .register_form {
+        background-color: #f4f0f0;
+        width: 500px;
+        height: 350px;
+        border-radius: 5px;
+        padding: 15px;
+
+        .form_title {
+            color: black;
+            text-align: center;
+            font-weight: 900;
+            font-family: $fontTitle;
+            font-size: 2em;
+        }
+    }
+
+}

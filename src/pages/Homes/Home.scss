@@ -1,0 +1,16 @@
+.listProducts {
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .center_content {
+        width: 80%;
+
+        .pages {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+    }
+}

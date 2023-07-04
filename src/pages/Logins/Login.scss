@@ -3,16 +3,15 @@
 .login_container {
     width: 100%;
     height: calc(100vh - $heightNavbar);
-    background-color: rgba($colorBlue, 0.3);
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 15px;
 
     .login_form {
-        background-color: #fff;
-        width: 700px;
-        height: 400px;
+        background-color: #f4f0f0;
+        width: 500px;
+        height: 320px;
         border-radius: 5px;
         padding: 15px;
 
@@ -24,7 +23,7 @@
             font-size: 2em;
         }
 
-        .form_input {}
+
     }
 
 }

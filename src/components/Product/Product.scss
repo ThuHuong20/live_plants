@@ -1,0 +1,23 @@
+@import "@varScss";
+
+.Card {
+    .card_img {
+        .card_name {
+            background-color: antiquewhite;
+
+            .card-text {
+                color: green;
+                font-size: 20px;
+                text-align: center;
+            }
+
+            .card-price {
+                display: flex;
+                justify-content: space-around;
+                color: red;
+                font-size: 17px;
+                font-weight: bold;
+            }
+        }
+    }
+}

@@ -2,7 +2,8 @@ import './App.scss'
 import { Routes, Route } from 'react-router-dom'
 import LazyLoad from './LazyLoad'
 import Navbar from '@components/Navbars/Navbar'
-
+import Footer from '@components/Footer/Footer'
+import Home from './pages/Homes/Home'
 function App() {
   return (
     <div className="App">
@@ -15,16 +16,20 @@ function App() {
       <div className='app_container'>
         {/* Content Router */}
         <Routes>
-          <Route path="" element={LazyLoad(() => import("@pages/Homes/Home"))()} />
+          <Route path="/" element={LazyLoad(() => import("@pages/Homes/Home"))()} />
           <Route path="/register" element={LazyLoad(() => import("@pages/Registers/Register"))()} />
-          <Route path="/login" element={LazyLoad(() => import("@pages/Logins/Login"))()} />
-          <Route path="/about" element={LazyLoad(() => import("@pages/Abouts/About"))()}>
-            {/* Router Con Của About */}
-            <Route path='my-infor' element={LazyLoad(() => import("@pages/Abouts/MyInfors/MyInfor"))()}></Route>
-          </Route>
+          <Route path="login" element={LazyLoad(() => import("@pages/Logins/Login"))()} />
+          <Route path="plant/:type" element={LazyLoad(() => import("@pages/Plant/Plant"))()} />
+          <Route path="cart" element={LazyLoad(() => import("@pages/Carts/Cart"))()} />
+          <Route path="detailItem/:id" element={LazyLoad(() => import("@pages/DetailItems/DetailItem"))()} />
         </Routes>
       </div>
       {/* Content Footer */}
+      <div className='footers'>
+        <div className='navbar_contents'>
+          <Footer />
+        </div>
+      </div>
     </div>
   );
 }
