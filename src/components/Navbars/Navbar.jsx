@@ -17,7 +17,7 @@ export default function Navbars() {
         <nav className="sub__navbar navbar navbar-expand-lg bg-body-tertiary">
             <div className="container_fluid">
                 <Link className="navbar-brand" to="/">
-                   Live Plant
+                    Live Plant
                 </Link>
                 <button
                     className="navbar-toggler"
@@ -60,25 +60,28 @@ export default function Navbars() {
                     />
                 </div>
                 {
-                    userLoginStore.userInfor == null ?
-                        <div className='icon'>
+                    userLoginStore.userInfor === null ?
+                        <div style={{ display: "flex" }} className='icon'>
                             <Link to='/login' style={{ textDecoration: "none", color: "black", fontSize: "20px" }} ><i className="icon_img fa-solid fa-user"></i></Link>
-                            <Link to='/cart' style={{ textDecoration: "none", color: "black", fontSize: "20px" }}> <i className="icon_img fa-solid fa-cart-shopping"></i></Link>
                         </div>
                         :
-                        <div className='avatarBox'>
+                        <div className="dropdown">
+                            <img src={userLoginStore.userInfor.avatar} alt="" className='avatar' />
                             {/* <span>Xin Chào {userLoginStore.userInfor.firstName} {userLoginStore.userInfor.lastName}</span> */}
-                            <img className='avatarImg' src={userLoginStore.userInfor.avatar} />
-                            <Link to='/cart' style={{ textDecoration: "none", color: "black", fontSize: "20px" }}><i className="icon_img fa-solid fa-cart-shopping"></i></Link>
-                            {localStorage.getItem("token") ? (<Link to='/' style={{ textDecoration: "none", color: "black", fontSize: "20px" }} onClick={() => {
-                                alert("Ban co muon dang xuat khoong")
-                                localStorage.removeItem("token")
-                                dispatch(userLoginActions.logOut())
-                                navigate('/')
-                            }}><i class="fa-solid fa-right-from-bracket"></i></Link>) : (<Link to='/register' style={{ textDecoration: "none", color: "black", fontSize: "20px" }} ><i className="icon_img fa-solid fa-user"></i></Link>)}
-                        </div>
+                            <div className="dropdownContent">
+                                <a href="#"><i className="fa-regular fa-address-card" ></i>Profile</a>
+                                <a href="#" onClick={() => {
+                                    alert("Are you sure want to logout?")
+                                    localStorage.removeItem("token")
+                                    dispatch(userLoginActions.logOut())
+                                    navigate("/")
 
+                                }} ><i className="fa-solid fa-right-from-bracket"></i>LogOut</a>
+
+                            </div>
+                        </div>
                 }
+                <Link to='/cart' style={{ textDecoration: "none", color: "black", fontSize: "20px" }}> <i className="icon_img fa-solid fa-cart-shopping"></i></Link>
 
 
             </div>

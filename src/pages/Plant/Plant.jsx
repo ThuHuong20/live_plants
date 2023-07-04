@@ -1,19 +1,16 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom'
-import { productActions } from '../../stores/slices/product.slice';
-import Product from '../../components/Product/Product';
+import { productActions } from '@stores/slices/product.slice';
+import Product from '@components/Product/Product';
 import { Col, Row } from 'antd';
 export default function Plant() {
     const { type } = useParams();
     const dispatch = useDispatch();
-
     const productStore = useSelector(store => store.productStore)
-
     useEffect(() => {
         dispatch(productActions.filterProduct(type))
     }, [type])
-
     return (
         <div className='listProducts'>
             <div className='center_content'>

@@ -35,6 +35,8 @@ const checkTokenLocal = createAsyncThunk(
         }
     }
 )
+// theem voa gio hang
+
 const updateCart = createAsyncThunk(
     "updateCarts",
     async (dataObj) => {
@@ -51,7 +53,7 @@ function createToken(userObj, privateKey) {
 }
 function checkToken(token, privateKey, keyEnv) {
     try {
-        if (privateKey != keyEnv) {
+        if (privateKey !== keyEnv) {
             return false
         }
         // giải mã
@@ -81,12 +83,12 @@ const userLoginSlice = createSlice(
         extraReducers: (builder) => {
             // login
             builder.addCase(login.fulfilled, (state, action) => {
-                let user = action.payload.users.find(user => user.userName == action.payload.inforLogin.userName);
+                let user = action.payload.users.find(user => user.userName === action.payload.inforLogin.userName);
                 if (!user) {
-                    alert("Không tìm thấy người dùng")
+                    alert("User not found")
                 } else {
-                    if (user.password != action.payload.inforLogin.password) {
-                        alert("Mật khẩu không chính xác")
+                    if (user.password !== action.payload.inforLogin.password) {
+                        alert("Password don't match")
                     } else {
                         state.userInfor = user; // cập nhật lại state
                         // tạo token và lưu vào local storage
@@ -109,9 +111,9 @@ const userLoginSlice = createSlice(
             builder.addCase(checkTokenLocal.fulfilled, (state, action) => {
                 console.log("du lieu khi checktoken", action.payload)
                 let deToken = checkToken(action.payload.token, process.env.REACT_APP_JWT_KEY, process.env.REACT_APP_JWT_KEY);
-                let user = action.payload.users.find(user => user.userName == deToken.userName);
+                let user = action.payload.users.find(user => user.userName === deToken.userName);
                 if (user) {
-                    if (user.password == deToken.password) {
+                    if (user.password === deToken.password) {
                         state.userInfor = user;
                     }
                 }
@@ -130,18 +132,18 @@ const userLoginSlice = createSlice(
                 },
                 (state, action) => {
                     if (action.meta) {
-                        if (action.meta.requestStatus == "pending") {
+                        if (action.meta.requestStatus === "pending") {
                             console.log("đã vào pending của api: ", action.type)
                             // if (action.type == "deleteUserByid/pending") {
                             //     console.log("trường hợp pending của api delete")
                             // }
                             state.loading = true;
                         }
-                        if (action.meta.requestStatus == "rejected") {
+                        if (action.meta.requestStatus === "rejected") {
                             //console.log("đã vào rejected của api: ", action.type)
                             state.loading = false;
                         }
-                        if (action.meta.requestStatus == "fulfilled") {
+                        if (action.meta.requestStatus === "fulfilled") {
                             //console.log("đã vào fulfilled của api: ", action.type)
                             state.loading = false;
                         }

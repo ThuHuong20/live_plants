@@ -28,12 +28,12 @@ export default function Register() {
                 eventForm.preventDefault(); // vô hiệu hành vi mặc định form
 
                 if (eventForm.target.inputPassword.value == "" || eventForm.target.inputUserName.value == "" || eventForm.target.inputUserEmail.value == "") {
-                    alert("vui lòng điền đầy đủ các trường")
+                    alert("Please enter full information")
                     return
                 }
 
                 if (eventForm.target.inputPassword.value != eventForm.target.inputRePassword.value) {
-                    alert("....")
+                    alert("Please enter confirm password")
                     return
                 }
 
@@ -44,7 +44,7 @@ export default function Register() {
                 setLoadingCheck(true)
                 let resultCheck = await axios.get(process.env.REACT_APP_SERVER_JSON + "users" + "?userName=" + eventForm.target.inputUserName.value);
                 if (resultCheck.data.length != 0) {
-                    alert("User Name da ton tai")
+                    alert("User Name already exists")
                     setLoadingCheck(false)
                     return
                 }

@@ -4,33 +4,25 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom'
 import { productActions } from '@stores/slices/product.slice';
 import { userLoginActions } from '@stores/slices/userLogin.slice';
-
+import { convertToUSD } from '@mieuteacher/meomeojs';
 import './DetailItem.scss'
 export default function DetailItem() {
     const [quantity, setQuantity] = useState(1)
     const { id } = useParams();
-
-
     const dispatch = useDispatch();
-
     const productStore = useSelector(store => store.productStore)
     const userLoginStore = useSelector(store => store.userLoginStore)
     useEffect(() => {
         dispatch(productActions.searchProductById(id))
     }, [])
     const product = productStore.listProducts[0]
-
-
     function addToCart(buyItem) {
-        console.log("da vao add");
         if (localStorage.getItem("token")) {
-
-
             let carts = [];
             let flag = false;
 
             carts = userLoginStore.userInfor.carts.slice().map(item => {
-                if (item.productId == buyItem.productId) {
+                if (item.productId === buyItem.productId) {
                     let temp = { ...item };
                     temp.quantity += buyItem.quantity;
                     flag = true;
@@ -65,7 +57,7 @@ export default function DetailItem() {
             console.log(carts);
             let flag = false;
             carts.map(item => {
-                if (item.productId == buyItem.productId) {
+                if (item.productId === buyItem.productId) {
                     item.quantity += buyItem.quantity
                     flag = true;
                 }
@@ -92,7 +84,7 @@ export default function DetailItem() {
                 <h1>{product?.name}</h1>
 
                 <div className='quantity-container'>
-                    <span style={{ color: "red", fontWeight: "bold", fontSize: "25px" }}>{product?.price}</span>
+                    <span style={{ color: "red", fontWeight: "bold", fontSize: "25px" }}> {convertToUSD(product?.price)}</span>
                     <div className='count_product'>
                         <button className='count' onClick={() => {
                             if (quantity > 1) {
@@ -118,7 +110,10 @@ export default function DetailItem() {
                     <button className='addToCart' onClick={() => addToCart(
                         {
                             productId: product.id,
-                            quantity: quantity
+                            quantity: quantity,
+                            img: product.img,
+                            name: product.name,
+                            price: product.price
                         }
                     )}>Add To Cart</button><br />
                     <div style={{ marginTop: "20px" }}>

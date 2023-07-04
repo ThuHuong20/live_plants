@@ -27,8 +27,8 @@ export default function Login() {
             <form onSubmit={(eventForm) => {
                 eventForm.preventDefault(); // vô hiệu hành vi mặc định form
 
-                if (eventForm.target.inputUserName.value == "" || eventForm.target.inputPassword.value == "") {
-                    alert("vui lòng điền đầy đủ các trường")
+                if (eventForm.target.inputUserName.value === "" || eventForm.target.inputPassword.value == "") {
+                    alert("Please enter full information")
                     return
                 }
 

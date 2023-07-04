@@ -48,29 +48,18 @@
       "avatar": "https://firebasestorage.googleapis.com/v0/b/learnfirebase-afb02.appspot.com/o/images%2Fcupcake12.jpg?alt=media&token=da646651-677d-4fe4-add7-6980a3a1e885",
       "carts": [
         {
-          "productId": 1,
-          "quantity": 7,
-          "des": "giao lẹ lẹ"
-        },
-        {
           "productId": 0,
-          "quantity": 13
+          "quantity": 6,
+          "img": "../image/Cactus/Cactus1.webp",
+          "name": "Fairy Castle Cactus",
+          "price": 84
         },
         {
-          "productId": 18,
-          "quantity": 11
-        },
-        {
-          "productId": 13,
-          "quantity": 9
-        },
-        {
-          "productId": 8,
-          "quantity": 3
-        },
-        {
-          "productId": 2,
-          "quantity": 1
+          "productId": 1,
+          "quantity": 3,
+          "img": "../image/largeplant/plan2.webp",
+          "name": "Large Ficus Audrey Tree",
+          "price": 274
         }
       ],
       "receipts": [

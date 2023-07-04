@@ -1,35 +1,53 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Cart.scss'
 import { useDispatch, useSelector } from 'react-redux'
 import { userLoginActions } from '@stores/slices/userLogin.slice';
 import { productActions } from '@stores/slices/product.slice';
 import { convertToUSD } from '@mieuteacher/meomeojs';
+import { Link } from 'react-router-dom';
 export default function DetailItem() {
+    const [cartData, setCartData] = useState([])
+    const [quantity, setQuantity] = useState(1)
     const dispatch = useDispatch();
     const userLoginStore = useSelector(store => store.userLoginStore);
-
     const productStore = useSelector(store => store.productStore);
-
     useEffect(() => {
         dispatch(userLoginActions.checkTokenLocal(localStorage.getItem("token")));
         dispatch(productActions.findAllProducts());
     }, []);
+    useEffect(() => {
+        if (userLoginStore.userInfor !== null & productStore.listProducts.length > 0) {
 
-    let listProducts = productStore.listProducts
 
-    let carts = [...userLoginStore.userInfor.carts]
+            let carts = [...userLoginStore.userInfor.carts]
 
-    for (let i = 0; i < carts.length; i++) {
-        for (let j = 0; j < listProducts.length; j++) {
-            if (carts[i].productId === listProducts[j].id) {
-                carts[i] = Object.assign({}, carts[i], { img: listProducts[j].img });
-                carts[i] = Object.assign({}, carts[i], { price: listProducts[j].price });
-                carts[i] = Object.assign({}, carts[i], { name: listProducts[j].name });
-            }
+            setCartData(carts)
+
         }
+    }, [userLoginStore.userInfor])
+
+    function handleDeleteProduct(productId) {
+        console.log(productId);
+
+        let carts = userLoginStore.userInfor.carts
+        // console.log(carts);
+
+        let updatedCart = carts.filter((product) => product.productId !== productId)
+
+        setCartData(updatedCart)
+
+        // console.log(updatedCart);
+
+        dispatch(userLoginActions.updateCart(
+            {
+                userId: userLoginStore.userInfor.id,
+                carts: {
+                    carts: updatedCart
+                }
+            }
+        ))
     }
 
-    console.log(carts)
     return (
         <div className='cart_container'>
             <div className='cart_shipping'>
@@ -38,24 +56,36 @@ export default function DetailItem() {
                 <p>This order qualifies for FREE Shipping!</p>
             </div>
             <div>
-                {carts?.map((product) =>
+                {cartData?.map((product) =>
                     <div className='cart_content'>
                         <div className='cart_image'>
-                            <img src={product.img} alt='' />
+                            <img src={product?.img} alt='' />
                         </div>
                         <div className='cart_item'>
-                            <h1>{product.name}</h1>
+                            <h1>{product?.name}</h1>
                             <div className='cart_price'>
-                                <div>
-                                    <span>{convertToUSD(product.price)}</span>
+                                <div className='price'>
+                                    <span>{convertToUSD(product?.price)}</span>
                                 </div>
                                 <div className='cart_count'>
-                                    <button type="button" class="btn btn-light">-</button>
-                                    <span>1</span>
-                                    <button type="button" class="btn btn-light">+</button>
+                                    <button
+                                        onClick={(e) => {
+                                            if (Number(e.target.parentNode.querySelector(".quantity").innerText > 1)) {
+                                                e.target.parentNode.querySelector(".quantity").innerText =
+                                                    Number(e.target.parentNode.querySelector(".quantity").innerText) - 1;
+                                            }
+                                        }}
+                                    >-</button>
+                                    <span style={{ padding: "5px" }} className="quantity">{product.quantity}</span>
+                                    <button onClick={(e) => {
+                                        e.target.parentNode.querySelector(".quantity").innerText =
+                                            Number(e.target.parentNode.querySelector(".quantity").innerText) + 1;
+                                    }}>+</button>
                                 </div>
                                 <div>
-                                    <i class="fa-solid fa-trash"></i>
+                                    <i style={{ color: " #de7474", fontSize: "20px" }} onClick={() => {
+                                        handleDeleteProduct(product.productId)
+                                    }} class="fa-solid fa-trash"></i>
                                 </div>
                             </div>
                         </div>
@@ -66,7 +96,7 @@ export default function DetailItem() {
             <div className='total'>
                 <h1>Total</h1>
                 <p>Price total</p>
-                <button>Check Out</button>
+                <button><Link style={{ textDecoration: "none" }} to='/payment'>Check Out</Link></button>
             </div>
         </div>
     )

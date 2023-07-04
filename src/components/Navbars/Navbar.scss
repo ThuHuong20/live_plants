@@ -8,7 +8,7 @@
         .navbar-brand {
             font-size: $sizeLarge;
             margin-left: 10px;
-            font-family:$fontTitle;
+            font-family: $fontTitle;
         }
     }
 
@@ -30,18 +30,54 @@
             }
         }
     }
+}
 
-    .avatarBox {
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-left: 20px;
+    padding: 5px;
+
+    .avatar {
         width: 30px;
         border-radius: 50%;
         display: flex;
         background-color: rgb(81, 77, 77);
-
-        .avatarImg {
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            object-fit: fill;
-        }
     }
+}
+
+.dropdownContent {
+    display: none;
+    position: fixed;
+    background-color: #75ab65;
+    min-width: 130px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    z-index: 1;
+}
+
+.dropdownContent {
+    a {
+        color: rgb(240, 233, 233);
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        font-size: 14px;
+    }
+
+    i {
+        margin-right: 10px;
+    }
+}
+
+.dropdownContent a:hover {
+    background-color: #021852;
+}
+
+.dropdown:hover .dropdownContent {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
 }

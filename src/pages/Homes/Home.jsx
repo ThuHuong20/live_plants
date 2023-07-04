@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import Banner from "../../components/Banner/Banner"
-import { productActions } from '../../stores/slices/product.slice';
-import { userLoginActions } from '../../stores/slices/userLogin.slice';
-import Product from '../../components/Product/Product';
-import { convertToUSD } from '@mieuteacher/meomeojs';
+import Banner from "@components/Banner/Banner"
+import { productActions } from '@stores/slices/product.slice';
+import { userLoginActions } from '@stores/slices/userLogin.slice';
+import Product from '@components/Product/Product';
 import "./Home.scss"
 import { Col, Row } from 'antd';
 export default function Home() {
@@ -58,9 +57,9 @@ export default function Home() {
 
   useEffect(() => {
     if (localStorage.getItem("token")) {
-      if (userLoginStore.userInfor != null) {
+      if (userLoginStore.userInfor !== null) {
         if (localStorage.getItem("carts")) {
-          if (userLoginStore.userInfor.carts.length == 0) {
+          if (userLoginStore.userInfor.carts.length === 0) {
             dispatch(userLoginActions.updateCart(
               {
                 userId: userLoginStore.userInfor.id,
@@ -75,7 +74,7 @@ export default function Home() {
 
             for (let i in carts) {
               for (let j in jssCarts) {
-                if (carts[i].productId == jssCarts[j].productId) {
+                if (carts[i].productId === jssCarts[j].productId) {
                   carts[i].quantity += jssCarts[j].quantity;
                   jssCarts.splice(j, 1);
                 }
@@ -124,7 +123,7 @@ export default function Home() {
                     }
                   ))
                   setNowPage(page.i)
-                }} style={{ width: "100px", marginRight: "20px", backgroundColor: nowPage == page.i ? "green" : "" }}>{page.i}</button>
+                }} style={{ width: "20px", borderRadius: "100%", marginRight: "20px", backgroundColor: nowPage === page.i ? "green" : "" }}>{page.i}</button>
               )
             }
 
