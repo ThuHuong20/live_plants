@@ -123,7 +123,6 @@ export default function DetailItem() {
         // Bắt đầu di chuyển
         requestAnimationFrame(moveElement);
     }
-
     return (
         <form onSubmit={(eForm) => {
             eForm.preventDefault();
@@ -150,7 +149,7 @@ export default function DetailItem() {
                             </span>
                         </button>
 
-                        <span className='quantity' style={{ fontSize: "18px" }}>{quantity}</span>
+                        <span className='quantity' style={{ fontSize: "25px" }}>{quantity}</span>
 
                         <button className='count' onClick={() => setQuantity(quantity + 1)}>
                             <span class="material-symbols-outlined">
@@ -161,15 +160,18 @@ export default function DetailItem() {
 
                 </div>
                 <div className='buttonAddCart' >
-                    <button type='submit' className='addToCart' onClick={() => addToCart(
-                        {
-                            productId: product.id,
-                            quantity: quantity,
-                            img: product.img,
-                            name: product.name,
-                            price: product.price
-                        }
-                    )}>Add To Cart</button><br />
+                    <button type='submit' className='addToCart' onClick={() => {
+                        // { handleClick }
+                        addToCart(
+                            {
+                                productId: product.id,
+                                quantity: quantity,
+                                img: product.img,
+                                name: product.name,
+                                price: product.price
+                            }
+                        )
+                    }}>Add To Cart</button><br />
                     <div style={{ marginTop: "20px" }}>
                         <span >30-Day Customer Happiness Guarantee</span>
                     </div>
@@ -177,4 +179,6 @@ export default function DetailItem() {
             </div>
         </form>
     )
+
 }
+

@@ -43,20 +43,24 @@
                     color: #de7474;
                     font-weight: bold;
                     font-size: 20px;
+
                 }
 
                 .cart_count {
-                    width: 70px;
+                    width: 100px;
                     height: 30px;
                     text-align: center;
+                    align-items: center;
                     border-radius: 5px;
                     background-color: #de7474;
                     font-size: 20px;
+                    letter-spacing: 5px;
 
                     button {
                         background-color: #de7474;
                         border: none;
                         font-size: 20px;
+                        letter-spacing: 5px;
                     }
 
 

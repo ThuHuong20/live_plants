@@ -28,17 +28,22 @@
             .count_product {
                 background-color: rgb(236, 77, 77);
                 border-radius: 10px;
+                letter-spacing: 5px;
+                width: 100px;
+                text-align: center;
 
                 button {
                     width: 30px;
                     height: 20px;
                     border-radius: 50%;
                     background-color: rgb(236, 77, 77);
+                    letter-spacing: 5px;
                 }
 
                 span {
                     margin-top: 4px;
                     color: aliceblue;
+                    letter-spacing: 5px;
                 }
             }
         }

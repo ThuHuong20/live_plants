@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import Loading from '@components/Loadings/Loading'
 import { userLoginActions } from '@stores/slices/userLogin.slice'
 import { useNavigate } from 'react-router-dom'
-import Link from 'antd/es/typography/Link'
 export default function Login() {
     const navigate = useNavigate();
     const dispatch = useDispatch()
@@ -76,7 +75,7 @@ export default function Login() {
                     />
                 </div>
                 <button style={{ width: "100%" }} type="submit" className="btn btn-success">Login</button>
-                <p style={{ textAlign: "center", marginTop: "10px" }}>Not a member ? <span style={{ color: "green" }} onClick={() => navigate("/register")}>Register</span></p>
+                <p style={{ textAlign: "center", marginTop: "10px" }}>Not a member ? <span style={{ color: "green", fontWeight: "bold" }} onClick={() => navigate("/register")}>Register</span></p>
             </form>
         </div>
 

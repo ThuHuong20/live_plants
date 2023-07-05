@@ -54,7 +54,6 @@ export default function Navbars() {
             <div className="searchBox d-flex" role="search">
                 <div>
                     <SearchModal />
-
                 </div>
                 {
                     userLoginStore.userInfor === null ?
@@ -79,6 +78,7 @@ export default function Navbars() {
                         </div>
                 }
                 <Link to='/cart' style={{ textDecoration: "none", color: "black", fontSize: "20px" }}> <i className="icon_img fa-solid fa-cart-shopping"></i></Link>
+                <p style={{ color: "red", fontWeight: "bold" }}>1</p>
 
 
             </div>

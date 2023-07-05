@@ -48,25 +48,39 @@
       "avatar": "https://firebasestorage.googleapis.com/v0/b/learnfirebase-afb02.appspot.com/o/images%2Fcupcake12.jpg?alt=media&token=da646651-677d-4fe4-add7-6980a3a1e885",
       "carts": [
         {
-          "productId": 3,
-          "quantity": 4,
-          "img": "../image/largeplant/plant1.webp",
-          "name": " Marginata Open Weave",
+          "productId": 1,
+          "quantity": 1,
+          "img": "../image/largeplant/plan2.webp",
+          "name": "Large Ficus Audrey Tree",
+          "price": 274
+        },
+        {
+          "productId": 4,
+          "quantity": 1,
+          "img": "../image/Cactus/Cactus2.webp",
+          "name": "Ladyfinger Cactus",
+          "price": 64
+        },
+        {
+          "productId": 21,
+          "quantity": 1,
+          "img": "../image/Dried/Dried4.webp",
+          "name": "Dried Eucalyptus Bunch ",
           "price": 278
         },
         {
-          "productId": 2,
+          "productId": 20,
           "quantity": 1,
-          "img": "../image/Orchid/Orchid1.webp",
+          "img": "../image/Orchid/Orchid5.webp",
           "name": "Coral Anthurium",
           "price": 78
         },
         {
-          "productId": 15,
-          "quantity": 5,
-          "img": "../image/largeplant/plant5.webp",
-          "name": "Marginata Open Weave",
-          "price": 278
+          "productId": 7,
+          "quantity": 13,
+          "img": "../image/largeplant/plant3.webp",
+          "name": "Large Ficus Audrey Tree",
+          "price": 274
         }
       ],
       "receipts": [
@@ -137,6 +151,25 @@
       "lastName": "Member",
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZfYb4CWzn9zbn-jLTwei46uk0dMEgMsh3gQ&usqp=CAU",
       "id": 5
+    },
+    {
+      "userName": "faf",
+      "email": "sacad",
+      "password": "121",
+      "isAdmin": false,
+      "firstName": "New",
+      "lastName": "Member",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZfYb4CWzn9zbn-jLTwei46uk0dMEgMsh3gQ&usqp=CAU",
+      "carts": [
+        {
+          "productId": 1,
+          "quantity": 1,
+          "img": "../image/largeplant/plan2.webp",
+          "name": "Large Ficus Audrey Tree",
+          "price": 274
+        }
+      ],
+      "id": 6
     }
   ],
   "products": [
