@@ -3,12 +3,13 @@ import './Navbar.scss'
 import { useSelector, useDispatch } from 'react-redux'
 import { userLoginActions } from '@stores/slices/userLogin.slice'
 import { Link, useNavigate } from 'react-router-dom';
+import SearchModal from '@pages/SearchModal/SearchModal'
 
 export default function Navbars() {
+
     const navigate = useNavigate()
     const dispatch = useDispatch();
     const userLoginStore = useSelector(store => store.userLoginStore);
-
     useEffect(() => {
         dispatch(userLoginActions.checkTokenLocal(localStorage.getItem("token")))
     }, [])
@@ -52,12 +53,8 @@ export default function Navbars() {
             </div>
             <div className="searchBox d-flex" role="search">
                 <div>
-                    <input
-                        className="form-control me-2"
-                        type="search"
-                        placeholder="Search"
-                        aria-label="Search"
-                    />
+                    <SearchModal />
+
                 </div>
                 {
                     userLoginStore.userInfor === null ?

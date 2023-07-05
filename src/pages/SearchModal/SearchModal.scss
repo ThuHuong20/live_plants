@@ -1,0 +1,27 @@
+.DetailItem_container {
+    display: flex;
+
+    .DetailItem {
+        display: flex;
+
+        .DetailItem_img {
+            img {
+                width: 200px;
+                height: 200px;
+            }
+        }
+
+        .DetailItem_name {
+            font-size: 25px;
+            margin-left: 30px;
+
+            h3 {
+                color: green;
+            }
+
+            p {
+                color: red
+            }
+        }
+    }
+}

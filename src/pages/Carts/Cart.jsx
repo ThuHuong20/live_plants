@@ -2,32 +2,23 @@ import React, { useEffect, useState } from 'react'
 import './Cart.scss'
 import { useDispatch, useSelector } from 'react-redux'
 import { userLoginActions } from '@stores/slices/userLogin.slice';
-import { productActions } from '@stores/slices/product.slice';
 import { convertToUSD } from '@mieuteacher/meomeojs';
 import { Link } from 'react-router-dom';
 export default function DetailItem() {
     const [cartData, setCartData] = useState([])
-    const [quantity, setQuantity] = useState(1)
     const dispatch = useDispatch();
     const userLoginStore = useSelector(store => store.userLoginStore);
-    const productStore = useSelector(store => store.productStore);
     useEffect(() => {
         dispatch(userLoginActions.checkTokenLocal(localStorage.getItem("token")));
-        dispatch(productActions.findAllProducts());
     }, []);
     useEffect(() => {
-        if (userLoginStore.userInfor !== null & productStore.listProducts.length > 0) {
-
-
+        if (userLoginStore.userInfor !== null) {
             let carts = [...userLoginStore.userInfor.carts]
-
             setCartData(carts)
-
         }
     }, [userLoginStore.userInfor])
 
     function handleDeleteProduct(productId) {
-        console.log(productId);
 
         let carts = userLoginStore.userInfor.carts
         // console.log(carts);
@@ -47,6 +38,13 @@ export default function DetailItem() {
             }
         ))
     }
+    const calculateTotalPrice = () => {
+        let totalPrice = 0;
+        cartData.forEach(product => {
+            totalPrice += product.price * product.quantity;
+        });
+        return totalPrice;
+    }
 
     return (
         <div className='cart_container'>
@@ -65,7 +63,8 @@ export default function DetailItem() {
                             <h1>{product?.name}</h1>
                             <div className='cart_price'>
                                 <div className='price'>
-                                    <span>{convertToUSD(product?.price)}</span>
+                                    {/* <span>{convertToUSD(product?.price)}</span> */}
+                                    <span>{convertToUSD(product.price * product.quantity)}</span>
                                 </div>
                                 <div className='cart_count'>
                                     <button
@@ -91,11 +90,12 @@ export default function DetailItem() {
                         </div>
                     </div>
                 )}
+
             </div>
 
             <div className='total'>
                 <h1>Total</h1>
-                <p>Price total</p>
+                <p style={{ color: "#de7474", fontWeight: "bold", fontSize: "25px" }}>{convertToUSD(calculateTotalPrice())}</p>
                 <button><Link style={{ textDecoration: "none" }} to='/payment'>Check Out</Link></button>
             </div>
         </div>

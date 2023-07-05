@@ -38,6 +38,16 @@ const paginateProduct = createAsyncThunk("paginateProduct", async (dataObj) => {
         maxPage: res.headers["x-total-count"],
     };
 });
+// tim kiem san pham
+const searchProductByName = createAsyncThunk(
+    "searchProductByName",
+    async (name) => {
+        //http://localhost:4000/products?name_like=keyword
+        console.log("🚀 ~ file: product.slice.js:45 ~ name:", name)
+        let res = await axios.get(process.env.REACT_APP_SERVER_JSON + "products?name_like=" + name)
+        return res.data
+    }
+)
 
 const productSlice = createSlice({
     name: "product",
@@ -45,6 +55,15 @@ const productSlice = createSlice({
         loading: false,
         listProducts: [],
         maxPage: null,
+        searchData: []
+    },
+    reducers: {
+        clearSearchData: (state, action) => {
+            return {
+                ...state,
+                searchData: []
+            }
+        }
     },
     extraReducers: (builder) => {
         // find all products
@@ -72,6 +91,10 @@ const productSlice = createSlice({
             console.log("đã vào fulfilled", action.payload)
             state.listProducts = state.listProducts.filter(product => product.id !== action.payload)
         });
+        // search product
+        builder.addCase(searchProductByName.fulfilled, (state, action) => {
+            state.searchData = [...action.payload]
+        })
 
         // xử lý các pending và rejected
         builder.addMatcher(
@@ -109,6 +132,7 @@ export const productActions = {
     filterProduct,
     paginateProduct,
     searchProductById,
-    deleteProductById
+    deleteProductById,
+    searchProductByName
 };
 export default productSlice.reducer;

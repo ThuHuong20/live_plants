@@ -16,7 +16,7 @@ export default function Payment() {
             <div className='payment_total'>
                 <div className='payment_img'>
                     <div>
-                        <img src='../image/largeplant/plan2.webp' alt='' />
+                        <img className='payment_img-icon' src='../image/largeplant/plan2.webp' alt='' />
                     </div>
                     <div>
                         <h5>largeplant</h5>
