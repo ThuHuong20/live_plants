@@ -49,78 +49,95 @@
       "carts": [],
       "receipts": [
         {
-          "receiptId": "04a6f1a7-2bcb-412b-920d-1d387f027ee1",
-          "total": 1212,
+          "receiptId": "c2d519cf-c7e8-447d-8a4e-9d4229e8069c",
+          "total": 1574,
           "paid": true,
-          "createDate": 1688613764760,
+          "createDate": 1688623430521,
+          "customerInfor": {
+            "name": "yen",
+            "phoneNumber": "12121",
+            "address": "asdasdsa"
+          },
           "receiptDetail": [
             {
-              "type": "Orchid",
-              "id": 8,
-              "img": "../image/Orchid/Orchid2.webp",
-              "name": "Coral Anthurium Orchid",
-              "price": 78,
-              "stock": 4,
-              "quantity": 4
-            }
-          ]
-        },
-        {
-          "receiptId": "f0c3e416-1ebe-460e-947a-ea505a63b810",
-          "total": 1212,
-          "paid": true,
-          "createDate": 1688613755207,
-          "receiptDetail": [
+              "type": "Dried",
+              "id": 6,
+              "img": "../image/Dried/Dried1.webp",
+              "name": "The Pink Plums Bouquet",
+              "price": 94,
+              "stock": 5,
+              "quantity": 2
+            },
             {
-              "type": "Cactus",
-              "id": 4,
-              "img": "../image/Cactus/Cactus2.webp",
-              "name": "Ladyfinger Cactus",
-              "price": 64,
-              "stock": 7,
+              "type": "Largeplant",
+              "id": 3,
+              "img": "../image/largeplant/plant1.webp",
+              "name": " Marginata Open Weave",
+              "price": 278,
+              "stock": 6,
+              "quantity": 2
+            },
+            {
+              "type": "Dried",
+              "id": 13,
+              "img": "../image/Dried/Dried2.webp",
+              "name": "The Blue Bunny Bouquet",
+              "price": 274,
+              "stock": 5,
               "quantity": 1
-            }
-          ]
-        },
-        {
-          "receiptId": "1360b2c5-f7f6-4b6e-991c-e3e8e48d1a16",
-          "total": 1212,
-          "paid": true,
-          "createDate": 1688613696101,
-          "receiptDetail": [
+            },
             {
-              "type": "Orchid",
-              "id": 2,
-              "img": "../image/Orchid/Orchid1.webp",
-              "name": "Coral Anthurium",
-              "price": 78,
+              "type": "Largeplant",
+              "id": 9,
+              "img": "../image/largeplant/plant4.webp",
+              "name": "Large Dracaena",
+              "price": 278,
               "stock": 10,
-              "quantity": 3
+              "quantity": 2
             }
           ]
         },
         {
-          "receiptId": "8f18a9cc-8221-4d88-8568-76e077fcc3a6",
-          "total": 1212,
+          "receiptId": "742e9a97-88b4-4a4e-8654-d205af3103cf",
+          "total": 622,
           "paid": true,
-          "createDate": 1688613670574,
+          "createDate": 1688619783913,
+          "customerInfor": {
+            "name": "thu",
+            "phoneNumber": "12121",
+            "address": "422423"
+          },
           "receiptDetail": [
             {
-              "type": "Cactus",
-              "id": 4,
-              "img": "../image/Cactus/Cactus2.webp",
-              "name": "Ladyfinger Cactus",
-              "price": 64,
-              "stock": 7,
+              "type": "Largeplant",
+              "id": 1,
+              "img": "../image/largeplant/plan2.webp",
+              "name": "Large Ficus Audrey Tree",
+              "price": 274,
+              "stock": 3,
+              "quantity": 2
+            },
+            {
+              "type": "Dried",
+              "id": 11,
+              "img": "../image/Dried/Dried6.webp",
+              "name": "The Daybreak Bouquet",
+              "price": 74,
+              "stock": 4,
               "quantity": 1
             }
           ]
         },
         {
-          "receiptId": "d9b520a6-ec13-4105-9915-a2be082f79d1",
-          "total": 1212,
+          "receiptId": "8b5415e8-76b5-4580-91ad-aebeffb60159",
+          "total": 1230,
           "paid": true,
-          "createDate": 1688613449297,
+          "createDate": 1688619329397,
+          "customerInfor": {
+            "name": "Phuoc",
+            "phoneNumber": "12121",
+            "address": "131231"
+          },
           "receiptDetail": [
             {
               "type": "Cactus",
@@ -129,42 +146,47 @@
               "name": "Fairy Castle Cactus",
               "price": 84,
               "stock": 5,
-              "quantity": 2
+              "quantity": 1
+            },
+            {
+              "type": "Orchid",
+              "id": 20,
+              "img": "../image/Orchid/Orchid5.webp",
+              "name": "Coral Anthurium",
+              "price": 78,
+              "stock": 8,
+              "quantity": 4
+            },
+            {
+              "type": "Dried",
+              "id": 21,
+              "img": "../image/Dried/Dried4.webp",
+              "name": "Dried Eucalyptus Bunch ",
+              "price": 278,
+              "stock": 9,
+              "quantity": 3
             }
           ]
         },
         {
-          "receiptId": "e7139103-2910-4c00-a159-2059834c6035",
-          "total": 1212,
+          "receiptId": "f454c35d-b59d-499d-87d4-3b4f88033430",
+          "total": 620,
           "paid": true,
-          "createDate": 1688613322862,
+          "createDate": 1688619198555,
+          "customerInfor": {
+            "name": "Huong",
+            "phoneNumber": "12345",
+            "address": "asdasdsa"
+          },
           "receiptDetail": [
             {
-              "type": "Orchid",
-              "id": 17,
-              "img": "../image/Orchid/Orchid4.webp",
-              "name": " Orchid small",
-              "price": 74,
-              "stock": 5,
-              "quantity": 1
-            },
-            {
-              "type": "Largeplant",
-              "id": 19,
-              "img": "../image/largeplant/plant6.webp",
-              "name": "Large Ficus Audrey Tree",
-              "price": 274,
+              "type": "Cactus",
+              "id": 4,
+              "img": "../image/Cactus/Cactus2.webp",
+              "name": "Ladyfinger Cactus",
+              "price": 64,
               "stock": 7,
               "quantity": 1
-            },
-            {
-              "type": "Dried",
-              "id": 6,
-              "img": "../image/Dried/Dried1.webp",
-              "name": "The Pink Plums Bouquet",
-              "price": 94,
-              "stock": 5,
-              "quantity": 3
             },
             {
               "type": "Largeplant",
@@ -177,33 +199,12 @@
             },
             {
               "type": "Largeplant",
-              "id": 1,
-              "img": "../image/largeplant/plan2.webp",
-              "name": "Large Ficus Audrey Tree",
-              "price": 274,
-              "stock": 3,
+              "id": 15,
+              "img": "../image/largeplant/plant5.webp",
+              "name": "Marginata Open Weave",
+              "price": 278,
+              "stock": 5,
               "quantity": 1
-            },
-            {
-              "type": "Orchid",
-              "id": 2,
-              "img": "../image/Orchid/Orchid1.webp",
-              "name": "Coral Anthurium",
-              "price": 78,
-              "stock": 10,
-              "quantity": 6
-            }
-          ]
-        },
-        {
-          "receiptId": "1",
-          "total": 5000,
-          "paid": false,
-          "createDate": "161376136713613",
-          "receiptDetail": [
-            {
-              "productId": 1,
-              "quantity": 2
             }
           ]
         }
@@ -240,6 +241,81 @@
       ],
       "id": 5,
       "receipts": []
+    },
+    {
+      "userName": "thuhuong12",
+      "email": "huong210720@gmail.com",
+      "password": "123",
+      "isAdmin": false,
+      "firstName": "New",
+      "lastName": "Member",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZfYb4CWzn9zbn-jLTwei46uk0dMEgMsh3gQ&usqp=CAU",
+      "carts": [
+        {
+          "type": "Largeplant",
+          "id": 1,
+          "img": "../image/largeplant/plan2.webp",
+          "name": "Large Ficus Audrey Tree",
+          "price": 274,
+          "stock": 3,
+          "quantity": 1
+        },
+        {
+          "type": "Orchid",
+          "id": 8,
+          "img": "../image/Orchid/Orchid2.webp",
+          "name": "Coral Anthurium Orchid",
+          "price": 78,
+          "stock": 4,
+          "quantity": 1
+        },
+        {
+          "type": "Dried",
+          "id": 13,
+          "img": "../image/Dried/Dried2.webp",
+          "name": "The Blue Bunny Bouquet",
+          "price": 274,
+          "stock": 5,
+          "quantity": 1
+        },
+        {
+          "type": "Dried",
+          "id": 6,
+          "img": "../image/Dried/Dried1.webp",
+          "name": "The Pink Plums Bouquet",
+          "price": 94,
+          "stock": 5,
+          "quantity": 1
+        },
+        {
+          "type": "Dried",
+          "id": 21,
+          "img": "../image/Dried/Dried4.webp",
+          "name": "Dried Eucalyptus Bunch ",
+          "price": 278,
+          "stock": 9,
+          "quantity": 1
+        },
+        {
+          "type": "Orchid",
+          "id": 20,
+          "img": "../image/Orchid/Orchid5.webp",
+          "name": "Coral Anthurium",
+          "price": 78,
+          "stock": 8,
+          "quantity": 1
+        },
+        {
+          "type": "Largeplant",
+          "id": 19,
+          "img": "../image/largeplant/plant6.webp",
+          "name": "Large Ficus Audrey Tree",
+          "price": 274,
+          "stock": 7,
+          "quantity": 1
+        }
+      ],
+      "id": 6
     }
   ],
   "products": [

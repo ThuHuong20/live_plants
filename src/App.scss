@@ -37,6 +37,8 @@
         width: 100%;
         max-width: $widthContent;
         height: 100%;
+        display: flex;
+        justify-content: center;
     }
 
     .footers {

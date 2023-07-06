@@ -24,26 +24,38 @@ export default function Payment() {
         } else {
             if (userLoginStore.userInfor.carts.length == 0) {
                 Modal.success({
-                    content: 'Check out thanh cong vui long vao trang lich su mua hang',
+                    content: 'Check out thanh cong, xin cam onw',
                 });
-                navigate("/")
+                navigate("/receipts")
             } else {
                 setCartData(userLoginStore.userInfor.carts)
             }
         }
     }, [userLoginStore.userInfor])
 
-    function checkout() {
-
+    function checkout(eventForm) {
+        if (eventForm.target.userName.value == "" ||
+            eventForm.target.userPhoneNumber.value == "" ||
+            eventForm.target.userAddress.value == "") {
+            navigate('/receipts')
+            return
+        }
         let patchData = {
             userId: userLoginStore.userInfor.id,
             data: {
                 carts: [],
                 receipts: [{
                     receiptId: randomId(),
-                    total: 1212,
+                    total: userLoginStore.userInfor.carts.reduce((value, nextItem) => {
+                        return value + (nextItem.quantity * nextItem.price)
+                    }, 0),
                     paid: true,
                     createDate: Date.now(),
+                    customerInfor: {
+                        name: eventForm.target.userName.value,
+                        phoneNumber: eventForm.target.userPhoneNumber.value,
+                        address: eventForm.target.userAddress.value
+                    },
                     receiptDetail: [
                         ...userLoginStore.userInfor.carts
                     ]
@@ -55,7 +67,10 @@ export default function Payment() {
     return (
         <div>
             <div className="shipping">
-                <div className="form-group">
+                <form onSubmit={(eventForm) => {
+                    eventForm.preventDefault()
+                    checkout(eventForm)
+                }} className="form-group">
                     <h2>Information</h2>
                     <div className="form-groupInput" >
                         <input
@@ -63,6 +78,7 @@ export default function Payment() {
                             className="form-group-input"
                             type="text"
                             placeholder="Name"
+                            name="userName"
                         />
                         <br />
                         <input
@@ -70,6 +86,7 @@ export default function Payment() {
                             className="form-group-input"
                             type="text"
                             placeholder="Phone Number"
+                            name="userPhoneNumber"
                         />
                         <br />
                         <input
@@ -77,6 +94,7 @@ export default function Payment() {
                             className="form-group-input"
                             type="text"
                             placeholder="Address"
+                            name="userAddress"
                         />
                         <br />
                     </div>
@@ -92,12 +110,11 @@ export default function Payment() {
                             <img src='../image/banner/payment.png' />
                         </div>
                     </div>
-                    <button onClick={() => checkout()} className="form-group-checkout">Check Out</button>
+                    <button type='submit' className="form-group-checkout" >Check Out</button>
                     <p className="validate-email" />
-                </div>
+                </form>
                 <div className="informationLine">
                     {cartData.map((product) =>
-
                         <div>
                             <div className="informationLine_product">
                                 <img src={product.img} />
@@ -106,9 +123,7 @@ export default function Payment() {
                                     <p>{convertToUSD(product.price)}</p>
                                 </div>
                             </div>
-
                         </div>
-
                     )}
                     <div className="informationLine_total">
                         <h3>Total:</h3>
