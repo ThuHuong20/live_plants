@@ -1,91 +1,101 @@
 @import "@varScss";
 
-.receiptDetail_container {
-    width: 1024px;
-    background-color: aliceblue;
-    border-radius: 10px;
+.opacity {
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1000;
+    top: 0;
+    left: 0;
+    background-color: rgba(black, 0.7);
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
 
-    h5 {
-        margin-left: 98%;
-        color: red;
-    }
+    .receiptDetail_container {
+        width: 1024px;
+        background-color: aliceblue;
+        border-radius: 10px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1000;
 
-    .informationLine {
-        padding: 20px;
-        width: 430px;
-        height: 100%;
-        display: flex;
-
-        .informationLine_product {
-            display: flex;
-            height: 100%;
-
-            img {
-                width: 100px;
-                height: 100px;
-            }
-
-            .informationLine_text {
-                margin-left: 30px;
-
-                h4 {
-                    color: green;
-                    font-weight: bold;
-                }
-
-                p {
-                    color: red;
-                    font-weight: bold;
-                }
-            }
+        h5 {
+            margin-left: 98%;
+            color: red;
         }
 
-        .informationLine_total {
-            margin-top: 20px;
-            border-top: 2px solid green;
-            display: flex;
+        .informationLine {
+            padding: 20px;
+            width: 430px;
             height: 100%;
+            display: flex;
 
-            h3 {
+            .informationLine_product {
+                display: flex;
+                height: 100%;
+
+                img {
+                    width: 100px;
+                    height: 100px;
+                }
+
+                .informationLine_text {
+                    margin-left: 30px;
+
+                    h4 {
+                        color: green;
+                        font-weight: bold;
+                    }
+
+                    p {
+                        color: red;
+                        font-weight: bold;
+                    }
+                }
+            }
+
+            .informationLine_total {
                 margin-top: 20px;
-                font-weight: bold;
+                border-top: 2px solid green;
+                display: flex;
+                height: 100%;
+
+                h3 {
+                    margin-top: 20px;
+                    font-weight: bold;
+                    font-family: $fontTitle;
+                }
+
+                span {
+                    margin-top: 20px;
+                    margin-left: 250px;
+                    color: red;
+                    font-weight: bold;
+                    font-size: 20px;
+                }
+            }
+
+
+        }
+
+        .informationLine_total_price {
+            margin-left: 30px;
+            display: flex;
+            border-top: 2px solid green;
+            margin-top: 10px;
+
+            h1 {
+                margin-top: 10px;
                 font-family: $fontTitle;
             }
 
-            span {
+            p {
                 margin-top: 20px;
-                margin-left: 250px;
+                font-size: 20px;
+                margin-left: 20px;
                 color: red;
                 font-weight: bold;
-                font-size: 20px;
             }
-        }
-
-
-    }
-
-    .informationLine_total_price {
-        margin-left: 30px;
-        display: flex;
-        border-top: 2px solid green;
-        margin-top: 10px;
-
-        h1 {
-            margin-top: 10px;
-            font-family: $fontTitle;
-        }
-
-        p {
-            margin-top: 20px;
-            font-size: 20px;
-            margin-left: 20px;
-            color: red;
-            font-weight: bold;
         }
     }
 }

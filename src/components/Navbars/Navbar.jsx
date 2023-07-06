@@ -68,6 +68,15 @@ export default function Navbars() {
                     <SearchModal />
                 </div>
                 {
+                    userLoginStore.userInfor != null
+                        ?
+                        userLoginStore.userInfor.isAdmin
+                            ? <Link to='/addmin'><i style={{ color: "black", }} class="fa-solid fa-pen"></i>  </Link>
+                            : <></>
+                        : <></>
+                }
+
+                {
                     userLoginStore.userInfor === null ?
                         <div style={{ display: "flex" }} className='icon'>
                             <Link to='/login' style={{ textDecoration: "none", color: "black", fontSize: "20px" }} ><i className="icon_img fa-solid fa-user"></i></Link>
@@ -90,6 +99,7 @@ export default function Navbars() {
                             </div>
                         </div>
                 }
+
                 <Link to='/cart' style={{ textDecoration: "none", color: "black", fontSize: "20px" }}> <i className="icon_img fa-solid fa-cart-shopping"></i></Link>
                 <p style={{ color: "red", fontWeight: "bold" }}>
                     {cartData?.reduce((value, nextItem) => {

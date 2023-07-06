@@ -30,7 +30,6 @@ const deleteUserById = createAsyncThunk(
 const updateUser = createAsyncThunk(
     "updateUser",
     async (dataObj) => {
-        console.log("dataObj dataObj", dataObj)
         //http://localhost:4000/users/1   , editData
         let res = await axios.put(process.env.REACT_APP_SERVER_JSON + 'userList/' + dataObj.userId, dataObj.editData);
         return res.data
@@ -40,7 +39,6 @@ const updateUser = createAsyncThunk(
 const setStatusUser = createAsyncThunk(
     "setStatusUser",
     async (dataObj) => {
-        console.log("dataObj dataObj", dataObj)
         //http://localhost:4000/users/1   , editData
         let res = await axios.patch(process.env.REACT_APP_SERVER_JSON + 'userList/' + dataObj.userId, dataObj.patchData);
         return res.data
@@ -75,7 +73,6 @@ const counterSlice = createSlice(
             });
             // delete user
             builder.addCase(deleteUserById.fulfilled, (state, action) => {
-                console.log("đã vào fulfilled", action.payload)
                 state.users = state.users.filter(user => user.id != action.payload)
             });
             // edit user
@@ -106,7 +103,7 @@ const counterSlice = createSlice(
                 (state, action) => {
                     if (action.meta) {
                         if (action.meta.requestStatus == "pending") {
-                            console.log("đã vào pending của api: ", action.type)
+                            // console.log("đã vào pending của api: ", action.type)
                             // if (action.type == "deleteUserByid/pending") {
                             //     console.log("trường hợp pending của api delete")
                             // }

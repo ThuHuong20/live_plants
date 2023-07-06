@@ -74,8 +74,7 @@ export default function Receipts() {
                     </thead>
                     <tbody>
                         {
-                            userLoginStore.userInfor?.receipts.map((receipt, index) =>
-
+                            userLoginStore.userInfor?.receipts?.map((receipt, index) =>
                                 <tr key={randomId()}>
                                     <th scope="col">
                                         <div className='tableContent'>

@@ -132,7 +132,7 @@ const userLoginSlice = createSlice(
                     if (user) {
                         if (user.password === deToken.password) {
                             state.userInfor = user;
-                            console.log("da vao")
+                            // console.log("da vao")
                         } else {
                             localStorage.removeItem("token")
                         }
@@ -164,7 +164,7 @@ const userLoginSlice = createSlice(
                 (state, action) => {
                     if (action.meta) {
                         if (action.meta.requestStatus === "pending") {
-                            console.log("đã vào pending của api: ", action.type)
+                            //  console.log("đã vào pending của api: ", action.type)
                             // if (action.type == "deleteUserByid/pending") {
                             //     console.log("trường hợp pending của api delete")
                             // }

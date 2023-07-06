@@ -46,8 +46,15 @@ const searchProductByName = createAsyncThunk(
     "searchProductByName",
     async (name) => {
         //http://localhost:4000/products?name_like=keyword
-        console.log("🚀 ~ file: product.slice.js:45 ~ name:", name)
         let res = await axios.get(process.env.REACT_APP_SERVER_JSON + "products?name_like=" + name)
+        return res.data
+    }
+)
+// addmin them san pham
+const addNewProduct = createAsyncThunk(
+    "addNewProduct",
+    async (newProduct) => {
+        let res = await axios.post(process.env.REACT_APP_SERVER_JSON + 'products', newProduct);
         return res.data
     }
 )
@@ -91,12 +98,15 @@ const productSlice = createSlice({
         });
         // delete product
         builder.addCase(deleteProductById.fulfilled, (state, action) => {
-            console.log("đã vào fulfilled", action.payload)
             state.listProducts = state.listProducts.filter(product => product.id !== action.payload)
         });
         // search product
         builder.addCase(searchProductByName.fulfilled, (state, action) => {
             state.searchData = [...action.payload]
+        })
+        // addmin theem san pham
+        builder.addCase(addNewProduct.fulfilled, (state, action) => {
+            console.log("action.payload new product", action.payload)
         })
 
         // xử lý các pending và rejected
@@ -136,6 +146,7 @@ export const productActions = {
     paginateProduct,
     searchProductById,
     deleteProductById,
-    searchProductByName
+    searchProductByName,
+    addNewProduct
 };
 export default productSlice.reducer;

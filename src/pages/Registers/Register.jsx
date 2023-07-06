@@ -59,7 +59,8 @@ export default function Register() {
                         firstName: "New",
                         lastName: "Member",
                         avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZfYb4CWzn9zbn-jLTwei46uk0dMEgMsh3gQ&usqp=CAU",
-                        carts: []
+                        carts: [],
+                        receipts: []
 
                     }
                 ))
