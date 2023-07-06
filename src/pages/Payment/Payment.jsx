@@ -2,8 +2,11 @@ import React, { useEffect, useState } from 'react'
 import { userLoginActions } from '@stores/slices/userLogin.slice'
 import './Payment.scss'
 import { useDispatch, useSelector } from 'react-redux';
-import { convertToUSD } from '@mieuteacher/meomeojs';
+import { convertToUSD, randomId } from '@mieuteacher/meomeojs';
+import { useNavigate } from 'react-router-dom';
+import { Modal } from 'antd'
 export default function Payment() {
+    const navigate = useNavigate();
     const dispatch = useDispatch();
     const [cartData, setCartData] = useState([]);
     const userLoginStore = useSelector(store => store.userLoginStore);
@@ -12,11 +15,43 @@ export default function Payment() {
     }, [])
     useEffect(() => {
         if (userLoginStore.userInfor == null) {
-            setCartData(JSON.parse(localStorage.getItem("carts")))
+            if (localStorage.getItem("carts")) {
+                setCartData(JSON.parse(localStorage.getItem("carts")))
+            } else {
+                navigate("/")
+            }
+
         } else {
-            setCartData(userLoginStore.userInfor.carts)
+            if (userLoginStore.userInfor.carts.length == 0) {
+                Modal.success({
+                    content: 'Check out thanh cong vui long vao trang lich su mua hang',
+                });
+                navigate("/")
+            } else {
+                setCartData(userLoginStore.userInfor.carts)
+            }
         }
     }, [userLoginStore.userInfor])
+
+    function checkout() {
+
+        let patchData = {
+            userId: userLoginStore.userInfor.id,
+            data: {
+                carts: [],
+                receipts: [{
+                    receiptId: randomId(),
+                    total: 1212,
+                    paid: true,
+                    createDate: Date.now(),
+                    receiptDetail: [
+                        ...userLoginStore.userInfor.carts
+                    ]
+                }, ...userLoginStore.userInfor.receipts]
+            }
+        }
+        dispatch(userLoginActions.checkout(patchData))
+    }
     return (
         <div>
             <div className="shipping">
@@ -54,12 +89,10 @@ export default function Payment() {
                         Express checkout
                         <br />
                         <div className="shippingDetails_button">
-                            <button>Shop Pay</button>
-                            <button>PayPal</button>
-                            <button>G Pay</button>
+                            <img src='../image/banner/payment.png' />
                         </div>
                     </div>
-                    <button className="form-group-checkout">Check Out</button>
+                    <button onClick={() => checkout()} className="form-group-checkout">Check Out</button>
                     <p className="validate-email" />
                 </div>
                 <div className="informationLine">
@@ -86,9 +119,7 @@ export default function Payment() {
                         </span>
                     </div>
                 </div>
-
             </div>
         </div>
-
     )
 }

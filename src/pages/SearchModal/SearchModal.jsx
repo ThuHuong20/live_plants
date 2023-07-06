@@ -22,9 +22,9 @@ function Example() {
     const productStore = useSelector(store => store.productStore);
 
 
-    useEffect(() => {
-        // dispatch(productActions.searchProductByName(name))
-    }, [])
+    // useEffect(() => {
+    //      dispatch(productActions.searchProductByName(name))
+    // }, [])
 
     const [searchTimeOut, setSearchTimeOut] = useState(null);
 

@@ -28,6 +28,7 @@
         }
 
         .form-group-checkout {
+            margin-top: 20px;
             width: 100%;
             height: 40px;
             cursor: pointer;
@@ -59,7 +60,10 @@
         }
 
         .shippingDetails_button {
-            display: flex;
+
+            img {
+                height: 30px;
+            }
         }
 
 

@@ -5,6 +5,7 @@ const findAllProducts = createAsyncThunk("findAllProducts", async () => {
     let res = await axios.get(process.env.REACT_APP_SERVER_JSON + "products");
     return res.data;
 });
+
 // lays ra tung san pham
 const filterProduct = createAsyncThunk("filterProduct", async (type) => {
     let res = await axios.get(
@@ -12,6 +13,7 @@ const filterProduct = createAsyncThunk("filterProduct", async (type) => {
     );
     return res.data;
 });
+
 // click tung san pham
 const searchProductById = createAsyncThunk(
     "searchProductById",
@@ -19,6 +21,7 @@ const searchProductById = createAsyncThunk(
         let res = await axios.get(`${process.env.REACT_APP_SERVER_JSON}products?id=${id}`)
         return res.data
     });
+
 // delete product
 const deleteProductById = createAsyncThunk(
     "deleteProductById",
@@ -55,7 +58,7 @@ const productSlice = createSlice({
         loading: false,
         listProducts: [],
         maxPage: null,
-        searchData: []
+        searchData: [],
     },
     reducers: {
         clearSearchData: (state, action) => {

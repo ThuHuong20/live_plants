@@ -17,11 +17,15 @@ export default function Navbars() {
 
     useEffect(() => {
         if (userLoginStore.userInfor == null) {
-            setCartData(JSON.parse(localStorage.getItem("carts")))
+            if (localStorage.getItem("carts")) {
+                setCartData(JSON.parse(localStorage.getItem("carts")))
+            } else {
+                setCartData([])
+            }
         } else {
             setCartData(userLoginStore.userInfor.carts)
         }
-    }, [userLoginStore.userInfor])
+    }, [userLoginStore.userInfor, userLoginStore.dependentData])
     return (
         <nav className="sub__navbar navbar navbar-expand-lg bg-body-tertiary">
             <div className="container_fluid">

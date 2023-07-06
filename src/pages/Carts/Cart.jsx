@@ -17,7 +17,9 @@ export default function DetailItem() {
 
     useEffect(() => {
         if (userLoginStore.userInfor == null) {
-            setCartData(JSON.parse(localStorage.getItem("carts")))
+            if (localStorage.getItem("carts")) {
+                setCartData(JSON.parse(localStorage.getItem("carts")))
+            }
         } else {
             setCartData(userLoginStore.userInfor.carts)
         }
@@ -137,6 +139,7 @@ export default function DetailItem() {
                 }
                 // load lai data local
                 setCartData(JSON.parse(localStorage.getItem("carts")))
+                dispatch(userLoginActions.changeDependentData())
             }
         }
     }

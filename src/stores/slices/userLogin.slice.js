@@ -47,6 +47,16 @@ const updateCart = createAsyncThunk(
     }
 )
 
+// checkout
+const checkout = createAsyncThunk(
+    "checkout",
+    async (patchData) => {
+        // localhost:4000/users/1
+        //console.log("dataObj",dataObj)
+        let res = await axios.patch(process.env.REACT_APP_SERVER_JSON + 'users/' + patchData.userId, patchData.data);
+        return res.data
+    }
+)
 
 function createToken(userObj, privateKey) {
     return CryptoJS.AES.encrypt(JSON.stringify(userObj), privateKey).toString();
@@ -71,12 +81,19 @@ const userLoginSlice = createSlice(
         name: "userLogin",
         initialState: {
             loading: false,
-            userInfor: null
+            userInfor: null,
+            dependentData: false
         },
         reducers: {
             logOut: (state, action) => {
                 return {
                     ...state, userInfor: null
+                }
+            },
+            changeDependentData: (state, action) => {
+                console.log("asdadada Thu Huong ")
+                return {
+                    ...state, dependentData: !state.dependentData
                 }
             }
         },
@@ -133,6 +150,10 @@ const userLoginSlice = createSlice(
                 state.userInfor = action.payload
                 localStorage.removeItem("carts")
             });
+            // chekout
+            builder.addCase(checkout.fulfilled, (state, action) => {
+                state.userInfor = action.payload;
+            });
             // xử lý các pending và rejected
             builder.addMatcher(
                 (action) => {
@@ -170,7 +191,8 @@ export const userLoginActions = {
     login,
     register,
     checkTokenLocal,
-    updateCart
+    updateCart,
+    checkout
 
 }
 export default userLoginSlice.reducer;

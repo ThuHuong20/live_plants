@@ -63,10 +63,12 @@ export default function DetailItem() {
                 carts?.push(buyItem)
             }
             localStorage.setItem("carts", JSON.stringify(carts));
+            dispatch(userLoginActions.changeDependentData())
         } else {
             // chưa từng có
             let carts = [buyItem]
             localStorage.setItem("carts", JSON.stringify(carts));
+            dispatch(userLoginActions.changeDependentData())
         }
     }
 
