@@ -153,11 +153,12 @@ export default function DetailItem() {
                 <p>This order qualifies for FREE Shipping!</p>
             </div>
             <div>
-                {
+                {cartData?.length > 0 ? (
                     cartData.map((product, index) =>
                         <ItemCard handleUpdateCart={handleUpdateCart} key={randomId()} product={product} />
                     )
-                }
+                ) : (<div style={{ textAlign: "center", fontSize: "30px", marginTop: "7px", fontWeight: "bold" }}>Your Cart Is Empty </div>)}
+
             </div>
             <div className='total'>
                 <h1>Total</h1>

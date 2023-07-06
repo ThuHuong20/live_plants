@@ -31,13 +31,6 @@ export default function Receipts() {
                 <h2>Purchase History</h2>
             </div>
             <div>
-                {/* <div className="informationLine_product_receipts">
-                    <img src='' />
-                    <div className="informationLine_text">
-                        <h4>ghfh</h4>
-                        <p>5463</p>
-                    </div>
-                </div> */}
                 {/* Noi hien thi history */}
                 <table className="table">
                     <thead>
@@ -82,6 +75,7 @@ export default function Receipts() {
                     <tbody>
                         {
                             userLoginStore.userInfor?.receipts.map((receipt, index) =>
+
                                 <tr key={randomId()}>
                                     <th scope="col">
                                         <div className='tableContent'>
@@ -101,7 +95,7 @@ export default function Receipts() {
                                     <td scope="col">
                                         <div className='tableContent'>
                                             {
-                                                receipt.paid ? "Da Thanh Toan" : "Chua Thanh Toan"
+                                                receipt.paid ? "Paid" : "Un paid"
                                             }
                                         </div>
                                     </td>
@@ -128,18 +122,13 @@ export default function Receipts() {
                                         </div>
                                     </td>
                                 </tr>
+
                             )
                         }
 
                     </tbody>
                 </table>
 
-            </div>
-            <div className="informationLine_total">
-                <h3>Total:</h3>
-                <span>
-                    total price
-                </span>
             </div>
             <div className="informationLine_Continue">
                 <button

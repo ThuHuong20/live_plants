@@ -21,6 +21,14 @@ export default function ReceiptDetail(props) {
                     </div>
                 )}
             </div>
+            <div className='informationLine_total_price'>
+                <h1 >Total:</h1>
+                <p>{
+                    convertToUSD(props.popData?.reduce((value, nextItem) => {
+                        return value + (nextItem.quantity * nextItem.price)
+                    }, 0))
+                }</p>
+            </div>
         </div>
     )
 }

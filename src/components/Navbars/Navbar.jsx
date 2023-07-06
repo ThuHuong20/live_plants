@@ -77,6 +77,7 @@ export default function Navbars() {
                             <img src={userLoginStore.userInfor.avatar} alt="" className='avatar' />
                             {/* <span>Xin Chào {userLoginStore.userInfor.firstName} {userLoginStore.userInfor.lastName}</span> */}
                             <div className="dropdownContent">
+                                <p href="#"><i className="fa-regular fa-address-card" onClick={() => navigate("/receipts")} ></i>Purchase History</p>
                                 <a href="#"><i className="fa-regular fa-address-card" ></i>Profile</a>
                                 <a href="#" onClick={() => {
                                     alert("Are you sure want to logout?")

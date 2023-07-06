@@ -37,9 +37,10 @@ export default function Payment() {
         if (eventForm.target.userName.value == "" ||
             eventForm.target.userPhoneNumber.value == "" ||
             eventForm.target.userAddress.value == "") {
-            navigate('/receipts')
+            alert('Please complete all information')
             return
         }
+        navigate('/receipts')
         let patchData = {
             userId: userLoginStore.userInfor.id,
             data: {
