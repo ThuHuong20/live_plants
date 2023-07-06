@@ -1,18 +1,22 @@
 import React, { useEffect, useState } from 'react'
+import { userLoginActions } from '@stores/slices/userLogin.slice'
 import './Payment.scss'
-import { useDispatch, useSelector } from 'react-redux'
-import { productActions } from '@stores/slices/product.slice'
+import { useDispatch, useSelector } from 'react-redux';
+import { convertToUSD } from '@mieuteacher/meomeojs';
 export default function Payment() {
-    const PaymentPage = () => {
-        const [cartItem, setCartItem] = useState([])
-        const dispatch = useDispatch()
-        const productStore = useSelector(store => store.productStore)
-        const userLoginStore = useSelector(store => store.userLoginStore)
-        useEffect(() => {
-            dispatch(productActions.searchProductById())
-        }, [])
-
-    }
+    const dispatch = useDispatch();
+    const [cartData, setCartData] = useState([]);
+    const userLoginStore = useSelector(store => store.userLoginStore);
+    useEffect(() => {
+        dispatch(userLoginActions.checkTokenLocal(localStorage.getItem("token")))
+    }, [])
+    useEffect(() => {
+        if (userLoginStore.userInfor == null) {
+            setCartData(JSON.parse(localStorage.getItem("carts")))
+        } else {
+            setCartData(userLoginStore.userInfor.carts)
+        }
+    }, [userLoginStore.userInfor])
     return (
         <div>
             <div className="shipping">
@@ -59,18 +63,30 @@ export default function Payment() {
                     <p className="validate-email" />
                 </div>
                 <div className="informationLine">
-                    <div className="informationLine_product">
-                        <img src='../image/Orchid/Orchid1.webp' />
-                        <div className="informationLine_text">
-                            <h4>teen san pham</h4>
-                            <p>Price</p>
+                    {cartData.map((product) =>
+
+                        <div>
+                            <div className="informationLine_product">
+                                <img src={product.img} />
+                                <div className="informationLine_text">
+                                    <h4>{product.name}</h4>
+                                    <p>{convertToUSD(product.price)}</p>
+                                </div>
+                            </div>
+
                         </div>
-                    </div>
+
+                    )}
                     <div className="informationLine_total">
                         <h3>Total:</h3>
-                        <span>Price</span>
+                        <span>
+                            {convertToUSD(cartData?.reduce((value, nextItem) => {
+                                return value + (nextItem.quantity * nextItem.price)
+                            }, 0))}
+                        </span>
                     </div>
                 </div>
+
             </div>
         </div>
 

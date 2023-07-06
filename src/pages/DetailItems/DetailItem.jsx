@@ -12,17 +12,20 @@ export default function DetailItem() {
     const dispatch = useDispatch();
     const productStore = useSelector(store => store.productStore)
     const userLoginStore = useSelector(store => store.userLoginStore)
+
     useEffect(() => {
         dispatch(productActions.searchProductById(id))
     }, [])
-    const product = productStore.listProducts[0]
+
+    const product = productStore.listProducts[0];
+
     function addToCart(buyItem) {
         if (localStorage.getItem("token")) {
             let carts = [];
             let flag = false;
 
             carts = userLoginStore.userInfor.carts.slice().map(item => {
-                if (item.productId === buyItem.productId) {
+                if (item.id === buyItem.id) {
                     let temp = { ...item };
                     temp.quantity += buyItem.quantity;
                     flag = true;
@@ -48,10 +51,9 @@ export default function DetailItem() {
         if (localStorage.getItem("carts")) {
             // đã từng có giỏ hàng
             let carts = JSON.parse(localStorage.getItem("carts"));
-            console.log(carts);
             let flag = false;
-            carts.map(item => {
-                if (item.productId === buyItem.productId) {
+            carts = carts.map(item => {
+                if (item.id == buyItem.id) {
                     item.quantity += buyItem.quantity
                     flag = true;
                 }
@@ -123,15 +125,12 @@ export default function DetailItem() {
         // Bắt đầu di chuyển
         requestAnimationFrame(moveElement);
     }
+
     return (
-        <form onSubmit={(eForm) => {
-            eForm.preventDefault();
-            const imgElement = eForm.target.productImg
-            const cartElement = document.querySelector(".fa-cart-shopping");
-            createBuyAnimation(imgElement, cartElement, 50, 50)
-        }} className='detail_container'>
+        <div
+            className='detail_container'>
             <div className='detail_img'>
-                <img style={{ zIndex: "1000000" }} name="productImg" src={product?.img} alt='' />
+                <img style={{ zIndex: "1000000" }} name="productImg" className='productImg' src={product?.img} alt='' />
             </div>
             <div className='detail_content'>
                 <h1>{product?.name}</h1>
@@ -160,24 +159,24 @@ export default function DetailItem() {
 
                 </div>
                 <div className='buttonAddCart' >
-                    <button type='submit' className='addToCart' onClick={() => {
+                    <button type='submit' className='addToCart' onClick={(eForm) => {
                         // { handleClick }
                         addToCart(
                             {
-                                productId: product.id,
+                                ...product,
                                 quantity: quantity,
-                                img: product.img,
-                                name: product.name,
-                                price: product.price
                             }
                         )
+                        const imgElement = eForm.target.parentNode.parentNode.parentNode.querySelector(".productImg")
+                        const cartElement = document.querySelector(".fa-cart-shopping");
+                        createBuyAnimation(imgElement, cartElement, 50, 50)
                     }}>Add To Cart</button><br />
                     <div style={{ marginTop: "20px" }}>
                         <span >30-Day Customer Happiness Guarantee</span>
                     </div>
                 </div>
             </div>
-        </form>
+        </div>
     )
 
 }

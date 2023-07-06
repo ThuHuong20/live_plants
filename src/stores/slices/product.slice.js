@@ -110,15 +110,15 @@ const productSlice = createSlice({
                         // if (action.type == "deleteUserByid/pending") {
                         //     console.log("trường hợp pending của api delete")
                         // }
-                        state.loading = true;
+                        //state.loading = true;
                     }
                     if (action.meta.requestStatus === "rejected") {
                         //console.log("đã vào rejected của api: ", action.type)
-                        state.loading = false;
+                        //state.loading = false;
                     }
                     if (action.meta.requestStatus === "fulfilled") {
                         //console.log("đã vào fulfilled của api: ", action.type)
-                        state.loading = false;
+                        //state.loading = false;
                     }
                 }
             }

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Navbar.scss'
 import { useSelector, useDispatch } from 'react-redux'
 import { userLoginActions } from '@stores/slices/userLogin.slice'
@@ -6,14 +6,22 @@ import { Link, useNavigate } from 'react-router-dom';
 import SearchModal from '@pages/SearchModal/SearchModal'
 
 export default function Navbars() {
-
+    const [cartData, setCartData] = useState([]);
     const navigate = useNavigate()
     const dispatch = useDispatch();
     const userLoginStore = useSelector(store => store.userLoginStore);
+
     useEffect(() => {
         dispatch(userLoginActions.checkTokenLocal(localStorage.getItem("token")))
     }, [])
 
+    useEffect(() => {
+        if (userLoginStore.userInfor == null) {
+            setCartData(JSON.parse(localStorage.getItem("carts")))
+        } else {
+            setCartData(userLoginStore.userInfor.carts)
+        }
+    }, [userLoginStore.userInfor])
     return (
         <nav className="sub__navbar navbar navbar-expand-lg bg-body-tertiary">
             <div className="container_fluid">
@@ -78,7 +86,11 @@ export default function Navbars() {
                         </div>
                 }
                 <Link to='/cart' style={{ textDecoration: "none", color: "black", fontSize: "20px" }}> <i className="icon_img fa-solid fa-cart-shopping"></i></Link>
-                <p style={{ color: "red", fontWeight: "bold" }}>1</p>
+                <p style={{ color: "red", fontWeight: "bold" }}>
+                    {cartData?.reduce((value, nextItem) => {
+                        return value + nextItem.quantity
+                    }, 0)}
+                </p>
 
 
             </div>

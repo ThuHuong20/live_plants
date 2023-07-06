@@ -4,6 +4,7 @@
     display: flex;
     justify-content: space-around;
     margin-top: 20px;
+    height: calc(100vh - 100px);
 
     .form-group {
         border: 1px solid black;
@@ -68,10 +69,13 @@
         border: 1px solid black;
         padding: 20px;
         width: 430px;
-        overflow: scroll;
+        overflow-y: auto;
+        overflow-x: hidden;
+        height: 100%;
 
         .informationLine_product {
             display: flex;
+            height: 100%;
 
             img {
                 width: 100px;
@@ -97,20 +101,48 @@
             margin-top: 20px;
             border-top: 2px solid green;
             display: flex;
+            height: 100%;
 
             h3 {
+                margin-top: 20px;
                 font-weight: bold;
                 font-family: $fontTitle;
             }
 
             span {
+                margin-top: 20px;
                 margin-left: 250px;
                 color: red;
                 font-weight: bold;
+                font-size: 20px;
             }
         }
 
 
     }
 
+}
+
+
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px white;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(grey, 0.5);
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(grey, 1);
 }

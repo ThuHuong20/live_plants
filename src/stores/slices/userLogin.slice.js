@@ -109,14 +109,24 @@ const userLoginSlice = createSlice(
             });
             // check token
             builder.addCase(checkTokenLocal.fulfilled, (state, action) => {
-                console.log("du lieu khi checktoken", action.payload)
                 let deToken = checkToken(action.payload.token, process.env.REACT_APP_JWT_KEY, process.env.REACT_APP_JWT_KEY);
                 let user = action.payload.users.find(user => user.userName === deToken.userName);
-                if (user) {
-                    if (user.password === deToken.password) {
-                        state.userInfor = user;
+                if (deToken) {
+                    if (user) {
+                        if (user.password === deToken.password) {
+                            state.userInfor = user;
+                            console.log("da vao")
+                        } else {
+                            localStorage.removeItem("token")
+                        }
+                    } else {
+                        localStorage.removeItem("token")
                     }
+                } else {
+                    console.log("da vao removeItem")
+                    localStorage.removeItem("token")
                 }
+
             });
             // update cart
             builder.addCase(updateCart.fulfilled, (state, action) => {
@@ -137,15 +147,15 @@ const userLoginSlice = createSlice(
                             // if (action.type == "deleteUserByid/pending") {
                             //     console.log("trường hợp pending của api delete")
                             // }
-                            state.loading = true;
+                            //state.loading = true;
                         }
                         if (action.meta.requestStatus === "rejected") {
                             //console.log("đã vào rejected của api: ", action.type)
-                            state.loading = false;
+                            //state.loading = false;
                         }
                         if (action.meta.requestStatus === "fulfilled") {
                             //console.log("đã vào fulfilled của api: ", action.type)
-                            state.loading = false;
+                            //state.loading = false;
                         }
                     }
                 }

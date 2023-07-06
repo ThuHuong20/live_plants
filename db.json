@@ -48,89 +48,60 @@
       "avatar": "https://firebasestorage.googleapis.com/v0/b/learnfirebase-afb02.appspot.com/o/images%2Fcupcake12.jpg?alt=media&token=da646651-677d-4fe4-add7-6980a3a1e885",
       "carts": [
         {
-          "productId": 1,
-          "quantity": 1,
-          "img": "../image/largeplant/plan2.webp",
+          "type": "Largeplant",
+          "id": 3,
+          "img": "../image/largeplant/plant1.webp",
+          "name": " Marginata Open Weave",
+          "price": 278,
+          "stock": 6,
+          "quantity": 3
+        },
+        {
+          "type": "Dried",
+          "id": 6,
+          "img": "../image/Dried/Dried1.webp",
+          "name": "The Pink Plums Bouquet",
+          "price": 94,
+          "stock": 5,
+          "quantity": 5
+        },
+        {
+          "type": "Cactus",
+          "id": 0,
+          "img": "../image/Cactus/Cactus1.webp",
+          "name": "Fairy Castle Cactus",
+          "price": 84,
+          "stock": 5,
+          "quantity": 1
+        },
+        {
+          "type": "Dried",
+          "id": 13,
+          "img": "../image/Dried/Dried2.webp",
+          "name": "The Blue Bunny Bouquet",
+          "price": 274,
+          "stock": 5,
+          "quantity": 1
+        },
+        {
+          "type": "Orchid",
+          "id": 17,
+          "img": "../image/Orchid/Orchid4.webp",
+          "name": " Orchid small",
+          "price": 74,
+          "stock": 5,
+          "quantity": 1
+        },
+        {
+          "type": "Largeplant",
+          "id": 19,
+          "img": "../image/largeplant/plant6.webp",
           "name": "Large Ficus Audrey Tree",
-          "price": 274
-        },
-        {
-          "productId": 4,
-          "quantity": 1,
-          "img": "../image/Cactus/Cactus2.webp",
-          "name": "Ladyfinger Cactus",
-          "price": 64
-        },
-        {
-          "productId": 21,
-          "quantity": 1,
-          "img": "../image/Dried/Dried4.webp",
-          "name": "Dried Eucalyptus Bunch ",
-          "price": 278
-        },
-        {
-          "productId": 20,
-          "quantity": 1,
-          "img": "../image/Orchid/Orchid5.webp",
-          "name": "Coral Anthurium",
-          "price": 78
-        },
-        {
-          "productId": 7,
-          "quantity": 13,
-          "img": "../image/largeplant/plant3.webp",
-          "name": "Large Ficus Audrey Tree",
-          "price": 274
-        }
-      ],
-      "receipts": [
-        {
-          "id": 1,
-          "userId": 1,
-          "totalPrice": 3000,
-          "paid": true,
-          "products": [
-            {
-              "productId": 1,
-              "quantity": 5,
-              "des": "giao lẹ lẹ"
-            }
-          ]
-        },
-        {
-          "id": 2,
-          "userId": 1,
-          "totalPrice": 3000,
-          "paid": true,
-          "products": [
-            {
-              "productId": 1,
-              "quantity": 5,
-              "des": "giao lẹ lẹ"
-            }
-          ]
+          "price": 274,
+          "stock": 7,
+          "quantity": 1
         }
       ]
-    },
-    {
-      "id": 2,
-      "userName": "ntbphuoc",
-      "password": "123456",
-      "isAdmin": true,
-      "firstName": "Phước",
-      "lastName": "Nguyễn",
-      "email": "thuhuong@gmail.com",
-      "avatar": "https://firebasestorage.googleapis.com/v0/b/learnfirebase-afb02.appspot.com/o/userAvatars%2Fadmin.jpg?alt=media&token=3482a408-7ed1-41c6-b18f-eb730dc02623"
-    },
-    {
-      "userName": "ngocyen",
-      "email": "h@gmamil.com",
-      "password": "123",
-      "isAdmin": false,
-      "firstName": "New",
-      "lastName": "Member",
-      "avatar": "https://png.pngtree.com/png-clipart/20210129/ourmid/pngtree-black-default-avatar-png-image_2813164.jpg",
-      "id": 3
     },
     {
       "userName": "thuhuong1",
@@ -143,33 +114,88 @@
       "id": 4
     },
     {
-      "userName": "thuhuong2",
+      "userName": "thuhuong",
       "email": "huong210720@gmail.com",
       "password": "123",
       "isAdmin": false,
       "firstName": "New",
       "lastName": "Member",
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZfYb4CWzn9zbn-jLTwei46uk0dMEgMsh3gQ&usqp=CAU",
-      "id": 5
-    },
-    {
-      "userName": "faf",
-      "email": "sacad",
-      "password": "121",
-      "isAdmin": false,
-      "firstName": "New",
-      "lastName": "Member",
-      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZfYb4CWzn9zbn-jLTwei46uk0dMEgMsh3gQ&usqp=CAU",
       "carts": [
         {
-          "productId": 1,
-          "quantity": 1,
+          "type": "Cactus",
+          "id": 0,
+          "img": "../image/Cactus/Cactus1.webp",
+          "name": "Fairy Castle Cactus",
+          "price": 84,
+          "stock": 5,
+          "quantity": 6
+        },
+        {
+          "type": "Cactus",
+          "id": 5,
+          "img": "../image/Cactus/Cactus3.webp",
+          "name": "Ball Cactus",
+          "price": 74,
+          "stock": 4,
+          "quantity": 1
+        },
+        {
+          "type": "Dried",
+          "id": 6,
+          "img": "../image/Dried/Dried1.webp",
+          "name": "The Pink Plums Bouquet",
+          "price": 94,
+          "stock": 5,
+          "quantity": 2
+        },
+        {
+          "type": "Dried",
+          "id": 11,
+          "img": "../image/Dried/Dried6.webp",
+          "name": "The Daybreak Bouquet",
+          "price": 74,
+          "stock": 4,
+          "quantity": 1
+        },
+        {
+          "type": "Dried",
+          "id": 13,
+          "img": "../image/Dried/Dried2.webp",
+          "name": "The Blue Bunny Bouquet",
+          "price": 274,
+          "stock": 5,
+          "quantity": 1
+        },
+        {
+          "type": "Largeplant",
+          "id": 1,
           "img": "../image/largeplant/plan2.webp",
           "name": "Large Ficus Audrey Tree",
-          "price": 274
+          "price": 274,
+          "stock": 3,
+          "quantity": 5
+        },
+        {
+          "type": "Dried",
+          "id": 21,
+          "img": "../image/Dried/Dried4.webp",
+          "name": "Dried Eucalyptus Bunch ",
+          "price": 278,
+          "stock": 9,
+          "quantity": 2
+        },
+        {
+          "type": "Dried",
+          "id": 23,
+          "img": "../image/Dried/Dried5.webp",
+          "name": "Dried Pampas Stems ",
+          "price": 74,
+          "stock": 11,
+          "quantity": 1
         }
       ],
-      "id": 6
+      "id": 5
     }
   ],
   "products": [
