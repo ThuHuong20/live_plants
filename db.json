@@ -55,9 +55,93 @@
           "price": 78,
           "stock": 10,
           "quantity": 2
+        },
+        {
+          "type": "Orchid",
+          "id": 8,
+          "img": "../image/Orchid/Orchid2.webp",
+          "name": "Coral Anthurium Orchid",
+          "price": 78,
+          "stock": 4,
+          "quantity": 2
         }
       ],
       "receipts": [
+        {
+          "receiptId": "a0edcf88-6833-45a0-8c70-aed5d8e4a8aa",
+          "total": 74,
+          "paid": true,
+          "createDate": 1688694089659,
+          "customerInfor": {
+            "name": "thu",
+            "phoneNumber": "12121",
+            "address": "asdasdsa"
+          },
+          "receiptDetail": [
+            {
+              "type": "Dried",
+              "id": 11,
+              "img": "../image/Dried/Dried6.webp",
+              "name": "The Daybreak Bouquet",
+              "price": 74,
+              "stock": 4,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "receiptId": "70cd69d3-cedb-4a11-822a-7777596f89a0",
+          "total": 78,
+          "paid": true,
+          "createDate": 1688694034057,
+          "customerInfor": {
+            "name": "huong",
+            "phoneNumber": "12121",
+            "address": "asdasdsa"
+          },
+          "receiptDetail": [
+            {
+              "type": "Orchid",
+              "id": 8,
+              "img": "../image/Orchid/Orchid2.webp",
+              "name": "Coral Anthurium Orchid",
+              "price": 78,
+              "stock": 4,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "receiptId": "ee0438c1-6079-4146-9420-c4c5556cb78b",
+          "total": 434,
+          "paid": true,
+          "createDate": 1688693976250,
+          "customerInfor": {
+            "name": "thu",
+            "phoneNumber": "12121",
+            "address": "asdasdsa"
+          },
+          "receiptDetail": [
+            {
+              "type": "Orchid",
+              "id": 2,
+              "img": "../image/Orchid/Orchid1.webp",
+              "name": "Coral Anthurium",
+              "price": 78,
+              "stock": 10,
+              "quantity": 2
+            },
+            {
+              "type": "Largeplant",
+              "id": 3,
+              "img": "../image/largeplant/plant1.webp",
+              "name": " Marginata Open Weave",
+              "price": 278,
+              "stock": 6,
+              "quantity": 1
+            }
+          ]
+        },
         {
           "receiptId": "35e7563d-f0ac-4c11-b2f3-57a5ff160f4a",
           "total": 78,
@@ -222,6 +306,37 @@
         }
       ],
       "id": 3
+    },
+    {
+      "userName": "ngocyen",
+      "email": "huong210720@gmail.com",
+      "password": "123",
+      "isAdmin": false,
+      "firstName": "New",
+      "lastName": "Member",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZfYb4CWzn9zbn-jLTwei46uk0dMEgMsh3gQ&usqp=CAU",
+      "carts": [
+        {
+          "type": "Largeplant",
+          "id": 1,
+          "img": "../image/largeplant/plan2.webp",
+          "name": "Large Ficus Audrey Tree",
+          "price": 274,
+          "stock": 3,
+          "quantity": 2
+        },
+        {
+          "type": "Cactus",
+          "id": 5,
+          "img": "../image/Cactus/Cactus3.webp",
+          "name": "Ball Cactus",
+          "price": 74,
+          "stock": 4,
+          "quantity": 1
+        }
+      ],
+      "receipts": [],
+      "id": 4
     }
   ],
   "products": [

@@ -26,7 +26,9 @@ export default function Payment() {
                 Modal.success({
                     content: 'Sucsses Checkout, Thankyou',
                 });
-                navigate("/receipts")
+                setTimeout(() => {
+                    navigate("/receipts")
+                }, 1000)
             } else {
                 setCartData(userLoginStore.userInfor.carts)
             }
@@ -40,7 +42,6 @@ export default function Payment() {
             alert('Please complete all information')
             return
         }
-        navigate('/receipts')
         let patchData = {
             userId: userLoginStore.userInfor.id,
             data: {
@@ -69,8 +70,15 @@ export default function Payment() {
         <div>
             <div className="shipping">
                 <form onSubmit={(eventForm) => {
-                    eventForm.preventDefault()
-                    checkout(eventForm)
+                    eventForm.preventDefault();
+                    // kiem tra login
+                    if (userLoginStore.userInfor != null) {
+                        checkout(eventForm)
+                    } else {
+                        Modal.warning({
+                            content: 'Please login!',
+                        });
+                    }
                 }} className="form-group">
                     <h2>Information</h2>
                     <div className="form-groupInput" >

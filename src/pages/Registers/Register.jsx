@@ -16,9 +16,64 @@ export default function Register() {
                 dispatch(userLoginActions.checkTokenLocal(localStorage.getItem("token")))
             }
         } else {
-            navigate('/')
+            // vua dang nhap thanh cong
+            let userCarts = userLoginStore.userInfor.carts;
+            if (localStorage.getItem("carts")) {
+                let localCarts = JSON.parse(localStorage.getItem("carts"));
+                if (userCarts.length == 0) {
+                    // truong hop tren mang chua co gio hang
+                    dispatch(userLoginActions.updateCart(
+                        {
+                            userId: userLoginStore.userInfor.id,
+                            carts: {
+                                carts: localCarts
+                            }
+                        }
+                    ))
+                    localStorage.removeItem('carts');
+                    navigate('/')
+                } else {
+                    // truong hop tren mang da co san pham
+
+                    let userCartsCopy = [];
+
+                    for (let i in userCarts) {
+                        let flag = false;
+                        for (let j in localCarts) {
+                            if (userCarts[i].id == localCarts[j].id) {
+                                let newObj = { ...userCarts[i] };
+                                newObj.quantity += localCarts[j].quantity;
+                                localCarts.splice(j, 1);
+                                userCartsCopy.push(newObj);
+                                flag = true;
+                                break
+                            }
+                        }
+
+                        if (!flag) {
+                            let newObj = { ...userCarts[i] };
+                            userCartsCopy.push(newObj);
+                        }
+                    }
+
+                    dispatch(userLoginActions.updateCart(
+                        {
+                            userId: userLoginStore.userInfor.id,
+                            carts: {
+                                carts: userCartsCopy.concat(localCarts)
+                            }
+                        }
+                    ))
+                    localStorage.removeItem('carts');
+                    navigate('/')
+                }
+            } else {
+                navigate('/')
+            }
         }
     }, [userLoginStore.userInfor])
+
+
     return (
         <div className='register_container'>
             {
