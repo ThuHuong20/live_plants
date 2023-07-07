@@ -19,6 +19,7 @@ export default function ReceiptDetail(props) {
                             <div className="informationLine_text">
                                 <h4>{product.name}</h4>
                                 <p>{convertToUSD(product.price)}</p>
+                                <p>Quantity: {product.quantity}</p>
                             </div>
                         </div>
                     )}

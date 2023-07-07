@@ -119,7 +119,7 @@ export default function Login() {
                 {/* {Password} */}
                 <div className="form_input input-group mb-3">
                     <input
-                        type="text"
+                        type="password"
                         className="form-control"
                         placeholder="Password"
                         aria-label="Username"

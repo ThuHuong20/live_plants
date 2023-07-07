@@ -92,7 +92,7 @@ export default function Register() {
                 {/* input password */}
                 <div className="form_input input-group mb-3">
                     <input
-                        type="text"
+                        type="password"
                         className="form-control"
                         placeholder="Password"
                         aria-label="Username"
@@ -102,7 +102,7 @@ export default function Register() {
                 </div>
                 <div className="form_input input-group mb-3">
                     <input
-                        type="text"
+                        type="password"
                         className="form-control"
                         placeholder="Enter Password"
                         aria-label="Username"

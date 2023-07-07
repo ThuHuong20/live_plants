@@ -24,7 +24,7 @@ export default function Payment() {
         } else {
             if (userLoginStore.userInfor.carts.length == 0) {
                 Modal.success({
-                    content: 'Check out thanh cong, xin cam onw',
+                    content: 'Sucsses Checkout, Thankyou',
                 });
                 navigate("/receipts")
             } else {

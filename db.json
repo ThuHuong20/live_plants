@@ -46,8 +46,40 @@
       "lastName": "Hương",
       "email": "thuhuong@gmail.com",
       "avatar": "https://firebasestorage.googleapis.com/v0/b/learnfirebase-afb02.appspot.com/o/images%2Fcupcake12.jpg?alt=media&token=da646651-677d-4fe4-add7-6980a3a1e885",
-      "carts": [],
+      "carts": [
+        {
+          "type": "Orchid",
+          "id": 2,
+          "img": "../image/Orchid/Orchid1.webp",
+          "name": "Coral Anthurium",
+          "price": 78,
+          "stock": 10,
+          "quantity": 2
+        }
+      ],
       "receipts": [
+        {
+          "receiptId": "35e7563d-f0ac-4c11-b2f3-57a5ff160f4a",
+          "total": 78,
+          "paid": true,
+          "createDate": 1688644654077,
+          "customerInfor": {
+            "name": "huong",
+            "phoneNumber": "12121",
+            "address": "asdasdsa"
+          },
+          "receiptDetail": [
+            {
+              "type": "Orchid",
+              "id": 2,
+              "img": "../image/Orchid/Orchid1.webp",
+              "name": "Coral Anthurium",
+              "price": 78,
+              "stock": 10,
+              "quantity": 1
+            }
+          ]
+        },
         {
           "receiptId": "16b13e59-c650-4499-bcb3-ecb23e73baa5",
           "total": 188,
@@ -157,48 +189,20 @@
       ]
     },
     {
-      "userName": "ngocyen",
+      "userName": "thuhuong",
       "email": "huong210720@gmail.com",
       "password": "123",
       "isAdmin": false,
       "firstName": "New",
       "lastName": "Member",
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZfYb4CWzn9zbn-jLTwei46uk0dMEgMsh3gQ&usqp=CAU",
-      "carts": [
-        {
-          "type": "Cactus",
-          "id": 0,
-          "img": "../image/Cactus/Cactus1.webp",
-          "name": "Fairy Castle Cactus",
-          "price": 84,
-          "stock": 5,
-          "quantity": 1
-        },
-        {
-          "type": "Dried",
-          "id": 11,
-          "img": "../image/Dried/Dried6.webp",
-          "name": "The Daybreak Bouquet",
-          "price": 74,
-          "stock": 4,
-          "quantity": 1
-        },
-        {
-          "type": "Orchid",
-          "id": 2,
-          "img": "../image/Orchid/Orchid1.webp",
-          "name": "Coral Anthurium",
-          "price": 78,
-          "stock": 10,
-          "quantity": 1
-        }
-      ],
+      "carts": [],
       "receipts": [
         {
-          "receiptId": "4a28fd33-5809-46a3-ae04-c78e4f2eb24d",
-          "total": 552,
+          "receiptId": "48a44123-e733-4a7b-beb0-c46ea2561790",
+          "total": 390,
           "paid": true,
-          "createDate": 1688639746672,
+          "createDate": 1688658658648,
           "customerInfor": {
             "name": "huong",
             "phoneNumber": "12121",
@@ -206,27 +210,18 @@
           },
           "receiptDetail": [
             {
-              "type": "Largeplant",
-              "id": 3,
-              "img": "../image/largeplant/plant1.webp",
-              "name": " Marginata Open Weave",
-              "price": 278,
-              "stock": 6,
-              "quantity": 1
-            },
-            {
-              "type": "Dried",
-              "id": 13,
-              "img": "../image/Dried/Dried2.webp",
-              "name": "The Blue Bunny Bouquet",
-              "price": 274,
-              "stock": 5,
-              "quantity": 1
+              "type": "Orchid",
+              "id": 2,
+              "img": "../image/Orchid/Orchid1.webp",
+              "name": "Coral Anthurium",
+              "price": 78,
+              "stock": 10,
+              "quantity": 5
             }
           ]
         }
       ],
-      "id": 2
+      "id": 3
     }
   ],
   "products": [
@@ -421,41 +416,6 @@
       "name": "Dried Pampas Stems ",
       "price": 74,
       "stock": 11
-    },
-    {
-      "name": "cactus",
-      "price": "45",
-      "type": "Cactus",
-      "img": "https://firebasestorage.googleapis.com/v0/b/module-2-5d4b9.appspot.com/o/images%2FCactus2.webp?alt=media&token=73393d58-95bc-4dca-af6e-2e0b153ec094",
-      "id": 24
-    },
-    {
-      "name": "chon cay",
-      "price": "45",
-      "type": "Cactus",
-      "img": "https://firebasestorage.googleapis.com/v0/b/module-2-5d4b9.appspot.com/o/images%2FCactus3.webp?alt=media&token=70e68e4b-8b48-403b-8cc6-d28250db833e",
-      "id": 25
-    },
-    {
-      "name": "ThuHUong",
-      "price": "35252",
-      "type": "Cactus",
-      "img": "https://firebasestorage.googleapis.com/v0/b/module-2-5d4b9.appspot.com/o/images%2FCactus2.webp?alt=media&token=d0f81aa0-53d2-4ddd-9a3c-f146274dce42",
-      "id": 26
-    },
-    {
-      "name": "ThuHUong",
-      "price": "35252",
-      "type": "Cactus",
-      "img": "https://firebasestorage.googleapis.com/v0/b/module-2-5d4b9.appspot.com/o/images%2FCactus2.webp?alt=media&token=0c4da44a-91d7-425b-92b3-49a59f64a881",
-      "id": 27
-    },
-    {
-      "name": "ThuHuong234",
-      "price": "352",
-      "type": "Largeplant",
-      "img": "https://firebasestorage.googleapis.com/v0/b/module-2-5d4b9.appspot.com/o/images%2FCactus4.webp?alt=media&token=3261c97c-8597-4d77-9f37-4127d678f98d",
-      "id": 28
     }
   ]
 }

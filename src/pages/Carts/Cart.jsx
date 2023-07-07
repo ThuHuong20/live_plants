@@ -55,7 +55,7 @@ export default function DetailItem() {
                 for (let i in cartTemp) {
                     if (cartTemp[i].id == productId) {
                         if (cartTemp[i].quantity == 1) {
-                            if (window.confirm("Ban co muon xoa khong?")) {
+                            if (window.confirm("Do you want to delete?")) {
                                 cartTemp.splice(i, 1)
                             }
                         } else {

@@ -62,7 +62,7 @@ export default function Receipts() {
                             </th>
                             <th scope="col">
                                 <div className='tableContent'>
-                                    Custumer Name
+                                    Name
                                 </div>
                             </th>
                             <th scope="col">
@@ -87,12 +87,12 @@ export default function Receipts() {
                                         </div>
                                     </td>
                                     <td scope="col">
-                                        <div className='tableContent'>
+                                        <div className='tableContent' style={{ color: "red" }}>
                                             {convertToUSD(receipt.total)}
                                         </div>
                                     </td>
                                     <td scope="col">
-                                        <div className='tableContent'>
+                                        <div className='tableContent' >
                                             {
                                                 receipt.paid ? "Paid" : "Un paid"
                                             }

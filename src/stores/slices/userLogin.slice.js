@@ -51,8 +51,6 @@ const updateCart = createAsyncThunk(
 const checkout = createAsyncThunk(
     "checkout",
     async (patchData) => {
-        // localhost:4000/users/1
-        //console.log("dataObj",dataObj)
         let res = await axios.patch(process.env.REACT_APP_SERVER_JSON + 'users/' + patchData.userId, patchData.data);
         return res.data
     }
