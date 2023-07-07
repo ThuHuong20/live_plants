@@ -54,7 +54,7 @@
           "name": "Coral Anthurium",
           "price": 78,
           "stock": 10,
-          "quantity": 2
+          "quantity": 3
         },
         {
           "type": "Orchid",
@@ -63,7 +63,25 @@
           "name": "Coral Anthurium Orchid",
           "price": 78,
           "stock": 4,
-          "quantity": 2
+          "quantity": 5
+        },
+        {
+          "type": "Cactus",
+          "id": 0,
+          "img": "../image/Cactus/Cactus1.webp",
+          "name": "Fairy Castle Cactus",
+          "price": 84,
+          "stock": 5,
+          "quantity": 1
+        },
+        {
+          "type": "Largeplant",
+          "id": 1,
+          "img": "../image/largeplant/plan2.webp",
+          "name": "Large Ficus Audrey Tree",
+          "price": 274,
+          "stock": 3,
+          "quantity": 1
         }
       ],
       "receipts": [
@@ -337,6 +355,113 @@
       ],
       "receipts": [],
       "id": 4
+    },
+    {
+      "userName": "hhh",
+      "email": "huong210720@gmail.com",
+      "password": "123",
+      "isAdmin": false,
+      "firstName": "New",
+      "lastName": "Member",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZfYb4CWzn9zbn-jLTwei46uk0dMEgMsh3gQ&usqp=CAU",
+      "carts": [
+        {
+          "type": "Orchid",
+          "id": 8,
+          "img": "../image/Orchid/Orchid2.webp",
+          "name": "Coral Anthurium Orchid",
+          "price": 78,
+          "stock": 4,
+          "quantity": 4
+        },
+        {
+          "type": "Dried",
+          "id": 6,
+          "img": "../image/Dried/Dried1.webp",
+          "name": "The Pink Plums Bouquet",
+          "price": 94,
+          "stock": 5,
+          "quantity": 1
+        }
+      ],
+      "receipts": [
+        {
+          "receiptId": "881c79fa-5a1f-4941-9dc6-dbdf7ee92c64",
+          "total": 352,
+          "paid": true,
+          "createDate": 1688694801797,
+          "customerInfor": {
+            "name": "thu",
+            "phoneNumber": "12121",
+            "address": "asdasdsa"
+          },
+          "receiptDetail": [
+            {
+              "type": "Largeplant",
+              "id": 1,
+              "img": "../image/largeplant/plan2.webp",
+              "name": "Large Ficus Audrey Tree",
+              "price": 274,
+              "stock": 3,
+              "quantity": 1
+            },
+            {
+              "type": "Orchid",
+              "id": 2,
+              "img": "../image/Orchid/Orchid1.webp",
+              "name": "Coral Anthurium",
+              "price": 78,
+              "stock": 10,
+              "quantity": 1
+            }
+          ]
+        }
+      ],
+      "id": 5
+    },
+    {
+      "userName": "thuhuong123",
+      "email": "huong210720@gmail.com",
+      "password": "123",
+      "isAdmin": false,
+      "firstName": "New",
+      "lastName": "Member",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZfYb4CWzn9zbn-jLTwei46uk0dMEgMsh3gQ&usqp=CAU",
+      "carts": [],
+      "receipts": [
+        {
+          "receiptId": "42021bc0-43f7-4c3c-b9e1-243ec5041be3",
+          "total": 822,
+          "paid": true,
+          "createDate": 1688695446639,
+          "customerInfor": {
+            "name": "huong",
+            "phoneNumber": "12345",
+            "address": "asdasdsa"
+          },
+          "receiptDetail": [
+            {
+              "type": "Dried",
+              "id": 13,
+              "img": "../image/Dried/Dried2.webp",
+              "name": "The Blue Bunny Bouquet",
+              "price": 274,
+              "stock": 5,
+              "quantity": 2
+            },
+            {
+              "type": "Largeplant",
+              "id": 1,
+              "img": "../image/largeplant/plan2.webp",
+              "name": "Large Ficus Audrey Tree",
+              "price": 274,
+              "stock": 3,
+              "quantity": 1
+            }
+          ]
+        }
+      ],
+      "id": 6
     }
   ],
   "products": [
@@ -531,6 +656,13 @@
       "name": "Dried Pampas Stems ",
       "price": 74,
       "stock": 11
+    },
+    {
+      "name": "cuatus",
+      "price": "35252",
+      "type": "Cactus",
+      "img": "https://firebasestorage.googleapis.com/v0/b/module-2-5d4b9.appspot.com/o/images%2FCactus1.webp?alt=media&token=8b5d88fe-2fb5-4fe1-86c1-6314d9cd6aa6",
+      "id": 24
     }
   ]
 }

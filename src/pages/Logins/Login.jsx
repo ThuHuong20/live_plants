@@ -73,9 +73,9 @@ export default function Login() {
     }, [userLoginStore.userInfor])
     return (
         <div className='login_container'>
-            {
+            {/* {
                 userLoginStore.loading ? <Loading></Loading> : <></>
-            }
+            } */}
             <form onSubmit={(eventForm) => {
                 eventForm.preventDefault(); // vô hiệu hành vi mặc định form
 

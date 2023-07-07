@@ -3,16 +3,15 @@ import { Routes, Route } from 'react-router-dom'
 import LazyLoad from './LazyLoad'
 import Navbar from '@components/Navbars/Navbar'
 import Footer from '@components/Footer/Footer'
-import Home from './pages/Homes/Home'
 import Loading from '@components/Loadings/Loading'
 import { useSelector } from 'react-redux';
 function App() {
   const userLoginStore = useSelector(store => store.userLoginStore);
   return (
     <div className="App">
-      {
+      {/* {
         userLoginStore.loading ? <Loading></Loading> : <></>
-      }
+      } */}
       {/* Header Navbar */}
       <div className='navbar_container'>
         <div className='navbar_contents'>
